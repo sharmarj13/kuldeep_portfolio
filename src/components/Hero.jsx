@@ -113,11 +113,11 @@ const Hero = () => {
 
         {/* ── Floating skill chips ── */}
         <FloatingChip label="Figma Expert" icon={<Star size={12} />} delay={1.2} style={{ top: '22%', left: '5%' }} />
-        <FloatingChip label="UI/UX Design" icon={<Zap size={12} />} delay={1.4} style={{ top: '38%', left: '3%' }} />
+        <FloatingChip label="UI/UX Designer" icon={<Zap size={12} />} delay={1.4} style={{ top: '38%', left: '3%' }} />
         <FloatingChip label="5+ Years Exp." icon={<Award size={12} />} delay={1.6} style={{ top: '54%', left: '6%' }} />
         <FloatingChip label="40+ Clients" icon={<Users size={12} />} delay={1.8} style={{ top: '28%', right: '4%' }} />
         <FloatingChip label="Design Systems" icon={<Star size={12} />} delay={2.0} style={{ top: '46%', right: '3%' }} />
-        <FloatingChip label="Prototyping" icon={<Zap size={12} />} delay={2.2} style={{ top: '62%', right: '5%' }} />
+        <FloatingChip label="Web Designer" icon={<Zap size={12} />} delay={2.2} style={{ top: '62%', right: '5%' }} />
 
         {/* ── Main Content ── */}
         <div className="container mx-auto px-6 max-w-screen-xl relative z-10 pt-24 pb-12 md:pt-32 md:pb-20">
@@ -135,7 +135,7 @@ const Hero = () => {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
               </span>
               <span className="text-[8px] md:text-[10px] font-bold uppercase tracking-[0.3em] md:tracking-[0.45em] text-slate-600 dark:text-slate-300">
-                Open to Work · Senior UI/UX Designer · 2026
+                Open to Work | Figma Designer | 2026
               </span>
             </motion.div>
 
@@ -188,8 +188,8 @@ const Hero = () => {
             >
               Hi, I'm{' '}
               <span className="text-slate-900 dark:text-white font-bold">{personalData.name}</span>{' '}
-              — a <span className="text-violet-600 dark:text-violet-400 font-semibold">Senior UI/UX Designer</span> from India.
-              I craft intuitive, beautiful digital products that users love — from wireframes and prototypes
+              a professional <span className="text-violet-600 dark:text-violet-400 font-semibold">Figma Designer</span> and <span className="text-violet-600 dark:text-violet-400 font-semibold">Senior UI/UX Designer</span> from India.
+              I craft intuitive, beautiful digital products and user experiences from wireframes and prototypes
               to pixel-perfect interfaces and scalable design systems.
             </motion.p>
 
@@ -204,7 +204,7 @@ const Hero = () => {
                 href="#portfolio"
                 className="group inline-flex items-center gap-2 px-6 py-3.5 md:px-8 md:py-4 bg-gradient-to-r from-violet-600 to-indigo-600 text-white rounded-full font-bold uppercase tracking-widest text-xs md:text-sm shadow-[0_10px_30px_rgba(139,92,246,0.25)] hover:shadow-[0_15px_40px_rgba(139,92,246,0.4)] hover:scale-105 transition-all duration-300"
               >
-                View My Work
+                View Portfolio
                 <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
               <a
@@ -212,7 +212,7 @@ const Hero = () => {
                 className="inline-flex items-center gap-2 px-6 py-3.5 md:px-8 md:py-4 bg-slate-50 dark:bg-white/5 text-slate-900 dark:text-white rounded-full font-bold uppercase tracking-widest text-xs md:text-sm hover:bg-slate-100 dark:hover:bg-white/10 border border-black/[0.08] dark:border-violet-500/40 transition-all duration-300"
               >
                 <Download size={16} className="text-violet-600 dark:text-violet-400" />
-                Hire Me
+                Contact Me
               </a>
             </motion.div>
 
@@ -242,7 +242,7 @@ const Hero = () => {
 
         {/* ── Scroll indicator ── */}
         <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-          <span className="text-[9px] font-bold uppercase tracking-[0.4em] text-slate-400 dark:text-slate-500">Scroll</span>
+          <span className="text-[9px] font-bold uppercase tracking-[0.4em] text-slate-400 dark:text-slate-500">Scroll Down</span>
           <div className="w-5 h-9 rounded-full border border-black/[0.1] dark:border-white/15 flex justify-center pt-1.5">
             <motion.div
               animate={{ y: [0, 14, 0] }}

@@ -29,7 +29,7 @@ const Experience = () => {
                 WORK<br /><span className="text-gradient">HISTORY</span>
               </h2>
               <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-8">
-                5 years of crafting user-centric digital products — from startups to enterprise-level design systems.
+                5 years of crafting user-centric digital products from startups to enterprise-level design systems.
               </p>
 
               <div className="p-5 bg-slate-50 dark:bg-white/5 rounded-2xl border border-black/[0.05] dark:border-violet-500/20 mb-4 shadow-sm">
@@ -39,7 +39,7 @@ const Experience = () => {
                 </div>
                 <div className="text-slate-900 dark:text-white font-black text-lg font-outfit">Senior UI/UX Designer</div>
                 <div className="text-slate-600 dark:text-white/60 font-semibold text-sm font-outfit mt-0.5">& Design Lead</div>
-                <p className="text-slate-500 dark:text-slate-500 text-[10px] mt-2 uppercase tracking-widest font-black opacity-80">Appic Softwares · 2021–Present</p>
+                <p className="text-slate-500 dark:text-slate-500 text-[10px] mt-2 uppercase tracking-widest font-black opacity-80">Appic Softwares | 2021–Present</p>
               </div>
 
               <div className="grid grid-cols-2 gap-3">
@@ -77,13 +77,12 @@ const Experience = () => {
                         {exp.company}
                       </div>
                       {exp.type && (
-                        <div className={`inline-flex px-2.5 py-1 rounded-full text-[8px] md:text-[9px] font-bold uppercase tracking-widest ${
-                          exp.type === 'Full-Time'
+                        <div className={`inline-flex px-2.5 py-1 rounded-full text-[8px] md:text-[9px] font-bold uppercase tracking-widest ${exp.type === 'Full-Time'
                             ? 'bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/10'
                             : exp.type === 'Freelance'
-                            ? 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/10'
-                            : 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/10'
-                        }`}>
+                              ? 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/10'
+                              : 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/10'
+                          }`}>
                           {exp.type}
                         </div>
                       )}

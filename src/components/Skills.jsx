@@ -39,7 +39,7 @@ const Skills = () => {
               MY <span className="text-gradient">EXPERTISE</span>
             </h2>
             <p className="text-slate-500 dark:text-slate-400 text-sm md:text-base max-w-md leading-relaxed">
-              Bridging design artistry with frontend engineering — crafting pixel-perfect, user-centric digital experiences.
+              As a professional Figma Designer and Web Designer, I bridge design artistry with frontend engineering to craft pixel-perfect, user-centric digital experiences.
             </p>
           </div>
         </motion.div>

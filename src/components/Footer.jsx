@@ -123,7 +123,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-10 border-t border-black/[0.05] dark:border-white/5 transition-colors duration-500">
           <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-600 text-center md:text-left">
-            &copy; {new Date().getFullYear()} Kuldeep Sharma · Senior UI/UX Designer
+            &copy; {new Date().getFullYear()} Kuldeep Sharma | Senior UI/UX Designer
           </div>
           <div className="flex items-center gap-1.5 text-[10px] md:text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-700 text-center md:text-right">
             Designed with <Heart size={10} className="text-violet-500 fill-current mx-0.5" /> by Kuldeep Sharma

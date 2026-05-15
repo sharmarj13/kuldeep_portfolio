@@ -5,7 +5,7 @@ import { personalData } from '../data';
 
 const ProjectCard = ({ project, onClick }) => {
   return (
-    <div 
+    <div
       onClick={onClick}
       className="group relative rounded-2xl overflow-hidden cursor-pointer bg-slate-50 dark:bg-white/5 border border-black/[0.05] dark:border-white/10 hover:border-violet-500/30 transition-all duration-500 hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_8px_40px_rgba(139,92,246,0.15)] shadow-sm"
     >
@@ -21,9 +21,9 @@ const ProjectCard = ({ project, onClick }) => {
           }}
         />
         <div className="absolute inset-0 bg-violet-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-           <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center scale-75 group-hover:scale-100 transition-transform duration-500">
-             <ExternalLink size={20} className="text-white" />
-           </div>
+          <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center scale-75 group-hover:scale-100 transition-transform duration-500">
+            <ExternalLink size={20} className="text-white" />
+          </div>
         </div>
       </div>
     </div>
@@ -68,11 +68,10 @@ const Portfolio = () => {
                 <button
                   key={cat}
                   onClick={() => setFilter(cat)}
-                  className={`px-6 py-2.5 md:px-8 md:py-2.5 rounded-xl text-[10px] md:text-xs font-bold uppercase tracking-widest transition-all duration-300 ${
-                    filter === cat
+                  className={`px-6 py-2.5 md:px-8 md:py-2.5 rounded-xl text-[10px] md:text-xs font-bold uppercase tracking-widest transition-all duration-300 ${filter === cat
                       ? 'bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-[0_10px_20px_rgba(139,92,246,0.3)] scale-105'
                       : 'text-slate-500 dark:text-slate-400 hover:text-violet-600 dark:hover:text-white hover:bg-white dark:hover:bg-white/10'
-                  }`}
+                    }`}
                 >
                   {cat}
                 </button>
@@ -81,7 +80,7 @@ const Portfolio = () => {
           </div>
         </div>
 
-        {/* Grid — simple animations */}
+        {/* Grid simple animations */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, idx) => (
@@ -93,9 +92,9 @@ const Portfolio = () => {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3, delay: Math.min(idx * 0.04, 0.4) }}
               >
-                <ProjectCard 
-                  project={project} 
-                  onClick={() => setSelectedProject({ ...project, index: idx })} 
+                <ProjectCard
+                  project={project}
+                  onClick={() => setSelectedProject({ ...project, index: idx })}
                 />
               </motion.div>
             ))}
@@ -133,10 +132,10 @@ const Portfolio = () => {
                     alt={selectedProject.title}
                     className="max-w-[95vw] max-h-[85vh] md:max-h-[90vh] object-contain rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.3)] border border-black/[0.05] dark:border-white/5"
                   />
-                  
+
                   {/* Navigation Buttons */}
                   <div className="absolute inset-y-0 -left-2 md:-left-24 flex items-center pointer-events-none">
-                    <button 
+                    <button
                       onClick={(e) => {
                         e.stopPropagation();
                         const prevIdx = (selectedProject.index - 1 + filteredProjects.length) % filteredProjects.length;
@@ -149,7 +148,7 @@ const Portfolio = () => {
                   </div>
 
                   <div className="absolute inset-y-0 -right-2 md:-right-24 flex items-center pointer-events-none">
-                    <button 
+                    <button
                       onClick={(e) => {
                         e.stopPropagation();
                         const nextIdx = (selectedProject.index + 1) % filteredProjects.length;
