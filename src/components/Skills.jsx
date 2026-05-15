@@ -60,7 +60,7 @@ const Skills = () => {
               transition={{ duration: 0.5, delay: i * 0.08 }}
               className="p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-black/[0.05] dark:border-white/10 hover:border-violet-500/30 hover:-translate-y-1 transition-all duration-300 group shadow-sm hover:shadow-xl"
             >
-              <div className="mb-3 group-hover:scale-110 transition-transform duration-300">{f.icon}</div>
+              <div className="mb-3 group-hover:scale-110 transition-transform duration-300">{React.cloneElement(f.icon, { 'aria-hidden': 'true' })}</div>
               <div className="font-bold text-slate-900 dark:text-white text-[13px] md:text-sm mb-0.5 tracking-tight">{f.label}</div>
               <div className="text-[9px] text-slate-500 dark:text-slate-500 font-bold uppercase tracking-widest leading-tight">{f.desc}</div>
             </motion.div>
@@ -93,7 +93,7 @@ const Skills = () => {
                   key={skill.name}
                   className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white dark:bg-white/5 border border-black/[0.05] dark:border-white/10 hover:border-pink-500/30 hover:scale-105 transition-all duration-200 cursor-default shadow-sm"
                 >
-                  <span className="text-pink-600 dark:text-pink-400">{getIcon(skill.category)}</span>
+                  <span className="text-pink-600 dark:text-pink-400">{React.cloneElement(getIcon(skill.category), { 'aria-hidden': 'true' })}</span>
                   <span className="font-bold text-sm text-slate-700 dark:text-white tracking-tight">{skill.name}</span>
                 </div>
               ))}
@@ -123,7 +123,7 @@ const Skills = () => {
                   key={skill.name}
                   className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white dark:bg-white/5 border border-black/[0.05] dark:border-white/10 hover:border-indigo-500/30 hover:scale-105 transition-all duration-200 cursor-default shadow-sm"
                 >
-                  <span className="text-indigo-600 dark:text-indigo-400">{getIcon(skill.category)}</span>
+                  <span className="text-indigo-600 dark:text-indigo-400">{React.cloneElement(getIcon(skill.category), { 'aria-hidden': 'true' })}</span>
                   <span className="font-bold text-sm text-slate-700 dark:text-white tracking-tight">{skill.name}</span>
                 </div>
               ))}

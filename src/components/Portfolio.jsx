@@ -22,7 +22,8 @@ const ProjectCard = ({ project, onClick }) => {
         />
         <div className="absolute inset-0 bg-violet-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
           <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center scale-75 group-hover:scale-100 transition-transform duration-500">
-            <ExternalLink size={20} className="text-white" />
+            <ExternalLink size={20} aria-hidden="true" className="text-white" />
+            <span className="sr-only">View Project</span>
           </div>
         </div>
       </div>
@@ -121,9 +122,10 @@ const Portfolio = () => {
                 {/* Close Button */}
                 <button
                   onClick={() => setSelectedProject(null)}
+                  aria-label="Close project gallery"
                   className="fixed top-6 right-6 md:top-10 md:right-10 z-[110] p-4 bg-slate-100 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/20 text-slate-900 dark:text-white rounded-full transition-all border border-black/[0.08] dark:border-white/20 backdrop-blur-2xl shadow-xl hover:scale-110 active:scale-95"
                 >
-                  <X size={28} />
+                  <X size={28} aria-hidden="true" />
                 </button>
 
                 <div className="relative group">
@@ -141,9 +143,10 @@ const Portfolio = () => {
                         const prevIdx = (selectedProject.index - 1 + filteredProjects.length) % filteredProjects.length;
                         setSelectedProject({ ...filteredProjects[prevIdx], index: prevIdx });
                       }}
+                      aria-label="Previous project"
                       className="pointer-events-auto p-4 md:p-5 bg-white/80 dark:bg-white/5 hover:bg-white dark:hover:bg-white/20 text-slate-900 dark:text-white rounded-full transition-all border border-black/[0.08] dark:border-white/20 hover:scale-110 backdrop-blur-xl shadow-lg"
                     >
-                      <ChevronLeft size={24} className="md:w-8 md:h-8" />
+                      <ChevronLeft size={24} aria-hidden="true" className="md:w-8 md:h-8" />
                     </button>
                   </div>
 
@@ -154,9 +157,10 @@ const Portfolio = () => {
                         const nextIdx = (selectedProject.index + 1) % filteredProjects.length;
                         setSelectedProject({ ...filteredProjects[nextIdx], index: nextIdx });
                       }}
+                      aria-label="Next project"
                       className="pointer-events-auto p-4 md:p-5 bg-white/80 dark:bg-white/5 hover:bg-white dark:hover:bg-white/20 text-slate-900 dark:text-white rounded-full transition-all border border-black/[0.08] dark:border-white/20 hover:scale-110 backdrop-blur-xl shadow-lg"
                     >
-                      <ChevronRight size={24} className="md:w-8 md:h-8" />
+                      <ChevronRight size={24} aria-hidden="true" className="md:w-8 md:h-8" />
                     </button>
                   </div>
                 </div>
@@ -180,9 +184,10 @@ const Portfolio = () => {
             href={personalData.contact.behance}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="View full profile on Behance"
             className="inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-violet-600 to-indigo-600 text-white rounded-2xl font-bold text-sm uppercase tracking-widest shadow-[0_10px_30px_rgba(139,92,246,0.3)] hover:shadow-[0_15px_40px_rgba(139,92,246,0.5)] hover:scale-105 transition-all duration-300"
           >
-            <ExternalLink size={18} />
+            <ExternalLink size={18} aria-hidden="true" />
             View Full Behance Profile
           </a>
         </div>

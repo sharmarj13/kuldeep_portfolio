@@ -86,16 +86,17 @@ const Contact = () => {
                   key={i}
                   whileHover={{ x: 6 }}
                   transition={{ duration: 0.2 }}
+                  aria-label={`Contact via ${item.label}: ${item.value}`}
                   className="group flex items-center gap-4 p-5 bg-slate-50 dark:bg-white/5 rounded-2xl border border-black/[0.05] dark:border-white/10 hover:border-violet-500/30 transition-all cursor-pointer shadow-sm"
                 >
                   <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center text-white flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                    {item.icon}
+                    {React.cloneElement(item.icon, { 'aria-hidden': 'true' })}
                   </div>
                   <div>
                     <div className="text-[10px] font-bold text-slate-500 dark:text-slate-500 uppercase tracking-widest">{item.label}</div>
                     <div className="text-slate-900 dark:text-white font-bold text-sm md:text-base mt-0.5">{item.value}</div>
                   </div>
-                  <ArrowUpRight size={18} className="ml-auto opacity-0 group-hover:opacity-100 text-violet-500 dark:text-violet-400 transition-all" />
+                  <ArrowUpRight size={18} aria-hidden="true" className="ml-auto opacity-0 group-hover:opacity-100 text-violet-500 dark:text-violet-400 transition-all" />
                 </motion.div>
               ))}
             </div>
@@ -104,9 +105,10 @@ const Contact = () => {
               href={personalData.contact.behance}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="View Behance Profile"
               className="inline-flex items-center gap-2 px-7 py-3.5 bg-slate-50 dark:bg-white/5 rounded-xl text-violet-600 dark:text-violet-400 font-bold text-sm border border-black/[0.05] dark:border-white/10 hover:bg-violet-500/10 hover:border-violet-500/40 transition-all shadow-sm"
             >
-              View Behance Profile <ArrowUpRight size={16} />
+              View Behance Profile <ArrowUpRight size={16} aria-hidden="true" />
             </a>
           </motion.div>
 
@@ -178,6 +180,7 @@ const Contact = () => {
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.99 }}
                   disabled={formStatus === 'loading'}
+                  aria-label={formStatus === 'loading' ? 'Sending message' : 'Send message'}
                   className={`w-full py-4.5 text-white rounded-2xl font-black text-xs md:text-sm uppercase tracking-[0.2em] flex items-center justify-center gap-3 transition-all ${
                     formStatus === 'loading' ? 'bg-slate-700 cursor-wait' : 
                     formStatus === 'success' ? 'bg-green-600' :
@@ -188,7 +191,7 @@ const Contact = () => {
                   {formStatus === 'loading' ? 'Sending...' : 
                    formStatus === 'success' ? 'Message Sent Successfully!' :
                    formStatus === 'error' ? 'Error! Please Try Again' :
-                   <>Send Message <Send size={18} /></>}
+                   <>Send Message <Send size={18} aria-hidden="true" /></>}
                 </motion.button>
               </form>
             </div>

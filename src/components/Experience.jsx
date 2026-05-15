@@ -34,7 +34,7 @@ const Experience = () => {
 
               <div className="p-5 bg-slate-50 dark:bg-white/5 rounded-2xl border border-black/[0.05] dark:border-violet-500/20 mb-4 shadow-sm">
                 <div className="flex items-center gap-3 mb-2">
-                  <Star size={16} className="text-violet-600 dark:text-violet-400 animate-spin" style={{ animationDuration: '4s' }} />
+                  <Star size={16} aria-hidden="true" className="text-violet-600 dark:text-violet-400 animate-spin" style={{ animationDuration: '4s' }} />
                   <span className="text-violet-600 dark:text-violet-400 font-bold text-sm uppercase tracking-widest">Current Role</span>
                 </div>
                 <div className="text-slate-900 dark:text-white font-black text-lg font-outfit">Senior UI/UX Designer</div>
@@ -100,7 +100,7 @@ const Experience = () => {
                   {exp.description.map((item, i) => (
                     <div key={i} className="flex items-start gap-3 p-3 rounded-xl hover:bg-white dark:hover:bg-white/5 transition-all group/item">
                       <div className="w-5 h-5 rounded-full bg-violet-500/10 dark:bg-violet-500/15 flex items-center justify-center text-violet-600 dark:text-violet-400 shrink-0 mt-0.5 group-hover/item:bg-violet-600 group-hover/item:text-white transition-all">
-                        <ChevronRight size={12} />
+                        <ChevronRight size={12} aria-hidden="true" />
                       </div>
                       <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed group-hover/item:text-slate-900 dark:group-hover/item:text-slate-300 transition-colors">{item}</p>
                     </div>

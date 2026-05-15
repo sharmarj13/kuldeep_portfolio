@@ -60,10 +60,11 @@ const Footer = () => {
 
             <a
               href={`mailto:${personalData.contact.email}`}
+              aria-label="Send an email"
               className="group inline-flex items-center gap-2.5 text-violet-600 dark:text-violet-400 font-bold text-sm md:text-base hover:text-violet-500 dark:hover:text-violet-300 transition-colors"
             >
               {personalData.contact.email}
-              <ArrowUpRight size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              <ArrowUpRight size={16} aria-hidden="true" className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </a>
           </div>
 
@@ -73,13 +74,14 @@ const Footer = () => {
             <ul className="space-y-4">
               {navLinks.map(link => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-slate-600 dark:text-slate-400 font-bold text-sm hover:text-violet-600 dark:hover:text-white transition-colors flex items-center gap-3 group"
-                  >
-                    <span className="w-4 h-px bg-slate-300 dark:bg-slate-700 group-hover:w-6 group-hover:bg-violet-500 transition-all duration-300" />
-                    {link.name}
-                  </a>
+                    <a
+                      href={link.href}
+                      aria-label={`Go to ${link.name}`}
+                      className="text-slate-600 dark:text-slate-400 font-bold text-sm hover:text-violet-600 dark:hover:text-white transition-colors flex items-center justify-between gap-3 group"
+                    >
+                      {link.name}
+                      <span className="w-4 h-px bg-slate-300 dark:bg-slate-700 group-hover:w-6 group-hover:bg-violet-500 transition-all duration-300" aria-hidden="true" />
+                    </a>
                 </li>
               ))}
             </ul>
@@ -95,10 +97,11 @@ const Footer = () => {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-slate-600 dark:text-slate-400 font-bold text-sm hover:text-violet-600 dark:hover:text-white transition-colors flex items-center gap-3 group"
+                    aria-label={`Follow on ${link.name}`}
+                    className="text-slate-600 dark:text-slate-400 font-bold text-sm hover:text-violet-600 dark:hover:text-white transition-colors flex items-center justify-between gap-3 group"
                   >
-                    <span className="w-4 h-px bg-slate-300 dark:bg-slate-700 group-hover:w-6 group-hover:bg-violet-500 transition-all duration-300" />
                     {link.name}
+                    <span className="w-4 h-px bg-slate-300 dark:bg-slate-700 group-hover:w-6 group-hover:bg-violet-500 transition-all duration-300" aria-hidden="true" />
                   </a>
                 </li>
               ))}

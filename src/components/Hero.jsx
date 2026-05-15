@@ -202,16 +202,18 @@ const Hero = () => {
             >
               <a
                 href="#portfolio"
+                aria-label="View Portfolio"
                 className="group inline-flex items-center gap-2 px-6 py-3.5 md:px-8 md:py-4 bg-gradient-to-r from-violet-600 to-indigo-600 text-white rounded-full font-bold uppercase tracking-widest text-xs md:text-sm shadow-[0_10px_30px_rgba(139,92,246,0.25)] hover:shadow-[0_15px_40px_rgba(139,92,246,0.4)] hover:scale-105 transition-all duration-300"
               >
                 View Portfolio
-                <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                <ArrowUpRight size={16} aria-hidden="true" className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
               <a
                 href={`mailto:${personalData.contact.email}`}
+                aria-label="Contact Me via Email"
                 className="inline-flex items-center gap-2 px-6 py-3.5 md:px-8 md:py-4 bg-slate-50 dark:bg-white/5 text-slate-900 dark:text-white rounded-full font-bold uppercase tracking-widest text-xs md:text-sm hover:bg-slate-100 dark:hover:bg-white/10 border border-black/[0.08] dark:border-violet-500/40 transition-all duration-300"
               >
-                <Download size={16} className="text-violet-600 dark:text-violet-400" />
+                <Download size={16} aria-hidden="true" className="text-violet-600 dark:text-violet-400" />
                 Contact Me
               </a>
             </motion.div>
@@ -242,8 +244,7 @@ const Hero = () => {
 
         {/* ── Scroll indicator ── */}
         <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-          <span className="text-[9px] font-bold uppercase tracking-[0.4em] text-slate-400 dark:text-slate-500">Scroll Down</span>
-          <div className="w-5 h-9 rounded-full border border-black/[0.1] dark:border-white/15 flex justify-center pt-1.5">
+          <div className="w-5 h-9 rounded-full border border-black/[0.1] dark:border-white/15 flex justify-center pt-1.5" aria-hidden="true">
             <motion.div
               animate={{ y: [0, 14, 0] }}
               transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}

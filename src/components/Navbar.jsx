@@ -49,14 +49,16 @@ const Navbar = ({ theme, toggleTheme }) => {
             <div className="hidden lg:flex items-center gap-4">
               <button
                 onClick={toggleTheme}
+                aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
                 className="w-9 h-9 rounded-full glass flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/10 transition-all border border-black/10 dark:border-white/10"
               >
                 {theme === 'dark'
-                  ? <Sun size={16} className="text-amber-400" />
-                  : <Moon size={16} className="text-indigo-600" />}
+                  ? <Sun size={16} aria-hidden="true" className="text-amber-400" />
+                  : <Moon size={16} aria-hidden="true" className="text-indigo-600" />}
               </button>
               <a
                 href="#contact"
+                aria-label="Hire Me"
                 className="px-5 py-2.5 bg-gradient-to-r from-violet-600 to-indigo-600 text-white rounded-full font-bold text-xs uppercase tracking-widest hover:shadow-[0_0_25px_rgba(139,92,246,0.5)] hover:scale-105 transition-all"
               >
                 Hire Me
@@ -67,15 +69,17 @@ const Navbar = ({ theme, toggleTheme }) => {
             <div className="flex lg:hidden items-center gap-3">
               <button 
                 onClick={toggleTheme} 
+                aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
                 className="w-9 h-9 rounded-full glass flex items-center justify-center text-slate-500 dark:text-slate-400 border border-black/10 dark:border-white/10"
               >
-                {theme === 'dark' ? <Sun size={16} className="text-amber-400" /> : <Moon size={16} className="text-indigo-600" />}
+                {theme === 'dark' ? <Sun size={16} aria-hidden="true" className="text-amber-400" /> : <Moon size={16} aria-hidden="true" className="text-indigo-600" />}
               </button>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
                 className="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-900 dark:text-white border border-black/10 dark:border-white/10"
               >
-                {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
+                {mobileMenuOpen ? <X size={18} aria-hidden="true" /> : <Menu size={18} aria-hidden="true" />}
               </button>
             </div>
           </div>
@@ -108,10 +112,11 @@ const Navbar = ({ theme, toggleTheme }) => {
                     <a
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
+                      aria-label={`Navigate to ${link.name}`}
                       className="text-4xl font-black font-outfit uppercase tracking-tight text-slate-900 dark:text-white hover:text-violet-500 transition-colors inline-flex items-center gap-4 group"
                     >
                       {link.name}
-                      <ArrowUpRight className="opacity-0 group-hover:opacity-100 transition-all" size={28} />
+                      <ArrowUpRight className="opacity-0 group-hover:opacity-100 transition-all" size={28} aria-hidden="true" />
                     </a>
                   </motion.li>
                 ))}
