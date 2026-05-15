@@ -27,7 +27,7 @@ const Navbar = ({ theme, toggleTheme }) => {
 
             {/* Logo */}
             <div className="text-xl md:text-2xl font-black font-outfit tracking-tight text-slate-900 dark:text-white">
-              KULDEEP<span className="text-violet-500">.</span>
+              KULDEEP<span className="text-violet-500">SHARMA</span>
             </div>
 
             {/* Desktop Nav */}
@@ -67,8 +67,8 @@ const Navbar = ({ theme, toggleTheme }) => {
 
             {/* Mobile Toggle */}
             <div className="flex lg:hidden items-center gap-3">
-              <button 
-                onClick={toggleTheme} 
+              <button
+                onClick={toggleTheme}
                 aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
                 className="w-9 h-9 rounded-full glass flex items-center justify-center text-slate-500 dark:text-slate-400 border border-black/10 dark:border-white/10"
               >

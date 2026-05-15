@@ -244,11 +244,11 @@ const Hero = () => {
 
         {/* ── Scroll indicator ── */}
         <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-          <div className="w-5 h-9 rounded-full border border-black/[0.1] dark:border-white/15 flex justify-center pt-1.5" aria-hidden="true">
+          <div className="w-6 h-10 rounded-full border-2 border-violet-500/20 dark:border-violet-400/20 flex justify-center pt-2 shadow-glow" aria-hidden="true">
             <motion.div
-              animate={{ y: [0, 14, 0] }}
-              transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-              className="w-1 h-2 bg-gradient-to-b from-violet-600 to-indigo-600 dark:from-violet-400 dark:to-indigo-400 rounded-full"
+              animate={{ y: [0, 16, 0], opacity: [0.3, 1, 0.3] }}
+              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+              className="w-1.5 h-1.5 bg-gradient-to-b from-violet-600 to-indigo-600 dark:from-violet-400 dark:to-indigo-400 rounded-full shadow-[0_0_8px_rgba(139,92,246,0.8)]"
             />
           </div>
         </div>

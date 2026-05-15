@@ -181,7 +181,7 @@ const Contact = () => {
                   whileTap={{ scale: 0.99 }}
                   disabled={formStatus === 'loading'}
                   aria-label={formStatus === 'loading' ? 'Sending message' : 'Send message'}
-                  className={`w-full py-4.5 text-white rounded-2xl font-black text-xs md:text-sm uppercase tracking-[0.2em] flex items-center justify-center gap-3 transition-all ${
+                  className={`w-full py-4 text-white rounded-2xl font-black text-xs md:text-sm uppercase tracking-[0.2em] flex items-center justify-center gap-3 transition-all ${
                     formStatus === 'loading' ? 'bg-slate-700 cursor-wait' : 
                     formStatus === 'success' ? 'bg-green-600' :
                     formStatus === 'error' ? 'bg-rose-600' :
