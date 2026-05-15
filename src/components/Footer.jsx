@@ -25,34 +25,34 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#030308] text-white pt-16 md:pt-20 pb-8 md:pb-10 relative overflow-hidden border-t border-white/5">
+    <footer className="bg-slate-50 dark:bg-[#030308] text-slate-900 dark:text-white pt-16 md:pt-24 pb-8 md:pb-12 relative overflow-hidden border-t border-black/[0.05] dark:border-white/5 transition-colors duration-500">
       {/* Top gradient line */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-violet-500/30 to-transparent" />
 
-      <div className="container mx-auto px-6 max-w-screen-xl">
+      <div className="container mx-auto px-6 max-w-screen-xl relative z-10">
 
         {/* Main Content */}
-        <div className="grid lg:grid-cols-4 gap-10 md:gap-12 mb-14">
+        <div className="grid lg:grid-cols-4 gap-12 md:gap-16 mb-16 md:mb-20">
 
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <div className="text-3xl font-black font-outfit tracking-tight text-white mb-3">
+            <div className="text-3xl md:text-4xl font-black font-outfit tracking-tight text-slate-900 dark:text-white mb-4">
               KULDEEP<span className="text-violet-500">.</span>
             </div>
-            <p className="text-slate-500 text-sm leading-relaxed mb-5 max-w-sm">
+            <p className="text-slate-500 dark:text-slate-400 text-sm md:text-base leading-relaxed mb-6 max-w-sm">
               Senior UI/UX Designer with 5+ years of experience crafting intuitive,
               pixel-perfect digital products. Specializing in user research, wireframing,
               prototyping, and design systems for web & mobile.
             </p>
 
             {/* Service Tags */}
-            <div className="flex flex-wrap gap-2 mb-6">
+            <div className="flex flex-wrap gap-2.5 mb-8">
               {services.map(s => (
                 <div
                   key={s.label}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-slate-400"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 bg-white dark:bg-white/5 border border-black/[0.05] dark:border-white/10 rounded-full text-[10px] font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400 shadow-sm transition-all duration-500 hover:border-violet-500/20"
                 >
-                  <span className="text-violet-400">{s.icon}</span>
+                  <span className="text-violet-600 dark:text-violet-400">{s.icon}</span>
                   {s.label}
                 </div>
               ))}
@@ -60,24 +60,24 @@ const Footer = () => {
 
             <a
               href={`mailto:${personalData.contact.email}`}
-              className="group inline-flex items-center gap-2 text-violet-400 font-bold text-sm hover:text-violet-300 transition-colors"
+              className="group inline-flex items-center gap-2.5 text-violet-600 dark:text-violet-400 font-bold text-sm md:text-base hover:text-violet-500 dark:hover:text-violet-300 transition-colors"
             >
               {personalData.contact.email}
-              <ArrowUpRight size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              <ArrowUpRight size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </a>
           </div>
 
           {/* Nav Links */}
           <div className="hidden sm:block">
-            <div className="text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-5">Quick Links</div>
-            <ul className="space-y-3">
+            <div className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 dark:text-slate-600 mb-6">Explore</div>
+            <ul className="space-y-4">
               {navLinks.map(link => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-slate-400 font-semibold text-sm hover:text-white transition-colors flex items-center gap-2 group"
+                    className="text-slate-600 dark:text-slate-400 font-bold text-sm hover:text-violet-600 dark:hover:text-white transition-colors flex items-center gap-3 group"
                   >
-                    <span className="w-4 h-px bg-slate-700 group-hover:w-6 group-hover:bg-violet-500 transition-all duration-300" />
+                    <span className="w-4 h-px bg-slate-300 dark:bg-slate-700 group-hover:w-6 group-hover:bg-violet-500 transition-all duration-300" />
                     {link.name}
                   </a>
                 </li>
@@ -87,17 +87,17 @@ const Footer = () => {
 
           {/* Social Links */}
           <div>
-            <div className="text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-5">Find Me On</div>
-            <ul className="space-y-3">
+            <div className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 dark:text-slate-600 mb-6">Stay Connected</div>
+            <ul className="space-y-4">
               {socials.map(link => (
                 <li key={link.name}>
                   <a
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-slate-400 font-semibold text-sm hover:text-white transition-colors flex items-center gap-2 group"
+                    className="text-slate-600 dark:text-slate-400 font-bold text-sm hover:text-violet-600 dark:hover:text-white transition-colors flex items-center gap-3 group"
                   >
-                    <span className="w-4 h-px bg-slate-700 group-hover:w-6 group-hover:bg-violet-500 transition-all duration-300" />
+                    <span className="w-4 h-px bg-slate-300 dark:bg-slate-700 group-hover:w-6 group-hover:bg-violet-500 transition-all duration-300" />
                     {link.name}
                   </a>
                 </li>
@@ -105,15 +105,15 @@ const Footer = () => {
             </ul>
 
             {/* Availability Badge */}
-            <div className="mt-8 p-4 bg-green-500/5 border border-green-500/20 rounded-xl">
-              <div className="flex items-center gap-2 mb-1">
-                <span className="relative flex h-2 w-2">
+            <div className="mt-10 p-5 bg-green-500/[0.03] dark:bg-green-500/5 border border-green-500/10 dark:border-green-500/20 rounded-2xl shadow-sm transition-colors duration-500">
+              <div className="flex items-center gap-2.5 mb-1.5">
+                <span className="relative flex h-2.5 w-2.5">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
                 </span>
-                <span className="text-green-400 font-bold text-xs uppercase tracking-widest">Available</span>
+                <span className="text-green-600 dark:text-green-400 font-black text-xs uppercase tracking-widest">Available for Hire</span>
               </div>
-              <p className="text-slate-500 text-xs leading-relaxed">
+              <p className="text-slate-500 dark:text-slate-500 text-[11px] leading-relaxed font-medium">
                 Open to freelance UI/UX projects & full-time opportunities.
               </p>
             </div>
@@ -121,19 +121,19 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-white/5">
-          <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-slate-600 text-center md:text-left">
-            &copy; {new Date().getFullYear()} Kuldeep Sharma All Rights Reserved
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-10 border-t border-black/[0.05] dark:border-white/5 transition-colors duration-500">
+          <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-600 text-center md:text-left">
+            &copy; {new Date().getFullYear()} Kuldeep Sharma · Senior UI/UX Designer
           </div>
-          <div className="flex items-center gap-1.5 text-[10px] md:text-xs font-bold uppercase tracking-widest text-slate-700 text-center md:text-right">
-            Designed & Built with <Heart size={10} className="text-violet-500 fill-current" /> by Kuldeep Sharma
+          <div className="flex items-center gap-1.5 text-[10px] md:text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-700 text-center md:text-right">
+            Designed with <Heart size={10} className="text-violet-500 fill-current mx-0.5" /> by Kuldeep Sharma
           </div>
         </div>
       </div>
 
       {/* Watermark */}
-      <div className="absolute -bottom-4 md:-bottom-8 left-0 w-full opacity-[0.012] select-none pointer-events-none overflow-hidden">
-        <div className="text-[8rem] md:text-[15rem] font-black font-outfit leading-none whitespace-nowrap tracking-tighter">UI · UX · DESIGN</div>
+      <div className="absolute -bottom-8 md:-bottom-12 left-0 w-full opacity-[0.05] dark:opacity-[0.015] select-none pointer-events-none overflow-hidden transition-opacity duration-500">
+        <div className="text-[10rem] md:text-[18rem] font-black font-outfit leading-none whitespace-nowrap tracking-tighter text-slate-900 dark:text-white">UI · UX · DESIGN</div>
       </div>
     </footer>
   );

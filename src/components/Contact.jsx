@@ -20,8 +20,6 @@ const Contact = () => {
     e.preventDefault();
     setFormStatus('loading');
 
-    // To use this, get a free Access Key from https://web3forms.com/
-    // and replace 'YOUR_ACCESS_KEY_HERE' with it.
     const accessKey = '6207c0ec-4582-417b-af96-06a061a24bd9'; 
 
     try {
@@ -50,23 +48,23 @@ const Contact = () => {
     }
   };
   const contactItems = [
-    { icon: <Mail size={18} />, label: 'Email', value: personalData.contact.email, color: 'from-violet-500 to-indigo-500' },
-    { icon: <Phone size={18} />, label: 'Phone', value: personalData.contact.phone, color: 'from-indigo-500 to-cyan-500' },
-    { icon: <MapPin size={18} />, label: 'Location', value: personalData.contact.location, color: 'from-pink-500 to-rose-500' },
+    { icon: <Mail size={18} />, label: 'Email', value: personalData.contact.email, color: 'from-violet-500 to-indigo-500 shadow-violet-500/20' },
+    { icon: <Phone size={18} />, label: 'Phone', value: personalData.contact.phone, color: 'from-indigo-500 to-cyan-500 shadow-indigo-500/20' },
+    { icon: <MapPin size={18} />, label: 'Location', value: personalData.contact.location, color: 'from-pink-500 to-rose-500 shadow-pink-500/20' },
   ];
 
   return (
-    <section id="contact" className="py-16 md:py-28 relative overflow-hidden bg-[#050510]">
-      <div className="absolute bottom-0 left-1/3 w-[500px] h-[500px] bg-violet-800/10 rounded-full blur-[120px] pointer-events-none" />
+    <section id="contact" className="py-12 md:py-20 relative overflow-hidden bg-white dark:bg-[#050510] transition-colors duration-500">
+      <div className="absolute bottom-0 left-1/3 w-[500px] h-[500px] bg-violet-600/5 dark:bg-violet-800/10 rounded-full blur-[120px] pointer-events-none transition-colors" />
 
-      <div className="container mx-auto px-6 max-w-screen-xl">
+      <div className="container mx-auto px-6 max-w-screen-xl relative z-10">
 
         <div className="flex items-center gap-3 mb-8 md:mb-12">
           <div className="h-px w-12 bg-gradient-to-r from-violet-500 to-transparent" />
           <span className="section-tag">Get In Touch</span>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
 
           {/* Left Side */}
           <motion.div
@@ -75,10 +73,10 @@ const Contact = () => {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7 }}
           >
-            <h2 className="text-4xl md:text-7xl font-black font-outfit tracking-tight leading-[0.9] text-white mb-6">
+            <h2 className="text-4xl md:text-7xl font-black font-outfit tracking-tight leading-[0.9] text-slate-900 dark:text-white mb-6">
               LET'S <span className="text-gradient">CONNECT</span>
             </h2>
-            <p className="text-slate-400 text-sm md:text-base mb-10 max-w-md leading-relaxed">
+            <p className="text-slate-500 dark:text-slate-400 text-sm md:text-base mb-10 max-w-md leading-relaxed">
               Have a project in mind? I'd love to hear about it. Send me a message and let's create something amazing together.
             </p>
 
@@ -88,16 +86,16 @@ const Contact = () => {
                   key={i}
                   whileHover={{ x: 6 }}
                   transition={{ duration: 0.2 }}
-                  className="group flex items-center gap-4 p-4 glass rounded-xl hover:border-violet-500/30 transition-colors cursor-pointer"
+                  className="group flex items-center gap-4 p-5 bg-slate-50 dark:bg-white/5 rounded-2xl border border-black/[0.05] dark:border-white/10 hover:border-violet-500/30 transition-all cursor-pointer shadow-sm"
                 >
-                  <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center text-white flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center text-white flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                     {item.icon}
                   </div>
                   <div>
-                    <div className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">{item.label}</div>
-                    <div className="text-white font-semibold text-sm mt-0.5">{item.value}</div>
+                    <div className="text-[10px] font-bold text-slate-500 dark:text-slate-500 uppercase tracking-widest">{item.label}</div>
+                    <div className="text-slate-900 dark:text-white font-bold text-sm md:text-base mt-0.5">{item.value}</div>
                   </div>
-                  <ArrowUpRight size={16} className="ml-auto opacity-0 group-hover:opacity-100 text-violet-400 transition-all" />
+                  <ArrowUpRight size={18} className="ml-auto opacity-0 group-hover:opacity-100 text-violet-500 dark:text-violet-400 transition-all" />
                 </motion.div>
               ))}
             </div>
@@ -106,7 +104,7 @@ const Contact = () => {
               href={personalData.contact.behance}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 glass rounded-xl text-violet-400 font-bold text-sm hover:bg-violet-500/10 hover:border-violet-500/40 transition-all"
+              className="inline-flex items-center gap-2 px-7 py-3.5 bg-slate-50 dark:bg-white/5 rounded-xl text-violet-600 dark:text-violet-400 font-bold text-sm border border-black/[0.05] dark:border-white/10 hover:bg-violet-500/10 hover:border-violet-500/40 transition-all shadow-sm"
             >
               View Behance Profile <ArrowUpRight size={16} />
             </a>
@@ -119,78 +117,78 @@ const Contact = () => {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="glass rounded-2xl p-6 md:p-8">
-              <h3 className="text-2xl font-black font-outfit text-white mb-6">Send a Message</h3>
+            <div className="bg-slate-50/50 dark:bg-white/5 rounded-3xl p-7 md:p-10 border border-black/[0.05] dark:border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.03)] dark:shadow-none">
+              <h3 className="text-2xl md:text-3xl font-black font-outfit text-slate-900 dark:text-white mb-8">Send a Message</h3>
 
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid md:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="grid md:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Full Name</label>
+                    <label className="block text-[10px] font-black text-slate-500 dark:text-slate-500 uppercase tracking-[0.15em] mb-2.5 ml-1">Full Name</label>
                     <input
                       type="text"
                       name="name"
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm outline-none focus:border-violet-500/60 focus:bg-violet-500/5 transition-all placeholder-slate-600"
+                      className="w-full bg-white dark:bg-white/5 border border-black/[0.08] dark:border-white/10 rounded-2xl px-5 py-4 text-slate-900 dark:text-white text-sm outline-none focus:border-violet-500/60 focus:ring-4 focus:ring-violet-500/5 transition-all placeholder-slate-400 dark:placeholder-slate-600 shadow-sm"
                       placeholder="Kuldeep Sharma"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Email</label>
+                    <label className="block text-[10px] font-black text-slate-500 dark:text-slate-500 uppercase tracking-[0.15em] mb-2.5 ml-1">Email Address</label>
                     <input
                       type="email"
                       name="email"
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm outline-none focus:border-violet-500/60 focus:bg-violet-500/5 transition-all placeholder-slate-600"
+                      className="w-full bg-white dark:bg-white/5 border border-black/[0.08] dark:border-white/10 rounded-2xl px-5 py-4 text-slate-900 dark:text-white text-sm outline-none focus:border-violet-500/60 focus:ring-4 focus:ring-violet-500/5 transition-all placeholder-slate-400 dark:placeholder-slate-600 shadow-sm"
                       placeholder="hello@example.com"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Subject</label>
+                  <label className="block text-[10px] font-black text-slate-500 dark:text-slate-500 uppercase tracking-[0.15em] mb-2.5 ml-1">Subject</label>
                   <input
                     type="text"
                     name="subject"
                     required
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm outline-none focus:border-violet-500/60 focus:bg-violet-500/5 transition-all placeholder-slate-600"
+                    className="w-full bg-white dark:bg-white/5 border border-black/[0.08] dark:border-white/10 rounded-2xl px-5 py-4 text-slate-900 dark:text-white text-sm outline-none focus:border-violet-500/60 focus:ring-4 focus:ring-violet-500/5 transition-all placeholder-slate-400 dark:placeholder-slate-600 shadow-sm"
                     placeholder="Project Inquiry"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Message</label>
+                  <label className="block text-[10px] font-black text-slate-500 dark:text-slate-500 uppercase tracking-[0.15em] mb-2.5 ml-1">Your Message</label>
                   <textarea
                     rows={5}
                     name="message"
                     required
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm outline-none focus:border-violet-500/60 focus:bg-violet-500/5 transition-all resize-none placeholder-slate-600"
-                    placeholder="Tell me about your project..."
+                    className="w-full bg-white dark:bg-white/5 border border-black/[0.08] dark:border-white/10 rounded-2xl px-5 py-4 text-slate-900 dark:text-white text-sm outline-none focus:border-violet-500/60 focus:ring-4 focus:ring-violet-500/5 transition-all resize-none placeholder-slate-400 dark:placeholder-slate-600 shadow-sm"
+                    placeholder="Tell me about your project and goals..."
                   />
                 </div>
 
                 <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.99 }}
                   disabled={formStatus === 'loading'}
-                  className={`w-full py-4 text-white rounded-xl font-bold text-sm uppercase tracking-widest flex items-center justify-center gap-2 transition-all ${
+                  className={`w-full py-4.5 text-white rounded-2xl font-black text-xs md:text-sm uppercase tracking-[0.2em] flex items-center justify-center gap-3 transition-all ${
                     formStatus === 'loading' ? 'bg-slate-700 cursor-wait' : 
                     formStatus === 'success' ? 'bg-green-600' :
                     formStatus === 'error' ? 'bg-rose-600' :
-                    'bg-gradient-to-r from-violet-600 to-indigo-600 shadow-[0_0_30px_rgba(139,92,246,0.25)] hover:shadow-[0_0_50px_rgba(139,92,246,0.45)]'
+                    'bg-gradient-to-r from-violet-600 to-indigo-600 shadow-[0_10px_30px_rgba(139,92,246,0.3)] hover:shadow-[0_15px_40px_rgba(139,92,246,0.5)]'
                   }`}
                 >
                   {formStatus === 'loading' ? 'Sending...' : 
-                   formStatus === 'success' ? 'Message Sent!' :
-                   formStatus === 'error' ? 'Error! Try Again' :
-                   <>Send Message <Send size={16} /></>}
+                   formStatus === 'success' ? 'Message Sent Successfully!' :
+                   formStatus === 'error' ? 'Error! Please Try Again' :
+                   <>Send Message <Send size={18} /></>}
                 </motion.button>
               </form>
             </div>
