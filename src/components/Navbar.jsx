@@ -27,7 +27,7 @@ const Navbar = ({ theme, toggleTheme }) => {
 
             {/* Logo */}
             <div className="text-xl md:text-2xl font-black font-outfit tracking-tight text-slate-900 dark:text-white">
-              KULDEEP<span className="text-violet-500">SHARMA</span>
+              KULDEEP <span className="text-violet-500"> SHARMA</span>
             </div>
 
             {/* Desktop Nav */}
