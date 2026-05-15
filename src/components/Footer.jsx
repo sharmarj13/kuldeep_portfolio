@@ -25,14 +25,14 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#030308] text-white pt-20 pb-10 relative overflow-hidden border-t border-white/5">
+    <footer className="bg-[#030308] text-white pt-16 md:pt-20 pb-8 md:pb-10 relative overflow-hidden border-t border-white/5">
       {/* Top gradient line */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent" />
 
       <div className="container mx-auto px-6 max-w-screen-xl">
 
         {/* Main Content */}
-        <div className="grid lg:grid-cols-4 gap-12 mb-14">
+        <div className="grid lg:grid-cols-4 gap-10 md:gap-12 mb-14">
 
           {/* Brand Column */}
           <div className="lg:col-span-2">
@@ -40,8 +40,8 @@ const Footer = () => {
               KULDEEP<span className="text-violet-500">.</span>
             </div>
             <p className="text-slate-500 text-sm leading-relaxed mb-5 max-w-sm">
-              Senior UI/UX Designer with 5+ years of experience crafting intuitive, 
-              pixel-perfect digital products. Specializing in user research, wireframing, 
+              Senior UI/UX Designer with 5+ years of experience crafting intuitive,
+              pixel-perfect digital products. Specializing in user research, wireframing,
               prototyping, and design systems for web & mobile.
             </p>
 
@@ -50,7 +50,7 @@ const Footer = () => {
               {services.map(s => (
                 <div
                   key={s.label}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold uppercase tracking-wider text-slate-400"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-slate-400"
                 >
                   <span className="text-violet-400">{s.icon}</span>
                   {s.label}
@@ -68,7 +68,7 @@ const Footer = () => {
           </div>
 
           {/* Nav Links */}
-          <div>
+          <div className="hidden sm:block">
             <div className="text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-5">Quick Links</div>
             <ul className="space-y-3">
               {navLinks.map(link => (
@@ -121,19 +121,19 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-3 pt-8 border-t border-white/5">
-          <div className="text-xs font-bold uppercase tracking-widest text-slate-600">
-            &copy; {new Date().getFullYear()} Kuldeep Sharma — All Rights Reserved
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-white/5">
+          <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-slate-600 text-center md:text-left">
+            &copy; {new Date().getFullYear()} Kuldeep Sharma All Rights Reserved
           </div>
-          <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-slate-700">
+          <div className="flex items-center gap-1.5 text-[10px] md:text-xs font-bold uppercase tracking-widest text-slate-700 text-center md:text-right">
             Designed & Built with <Heart size={10} className="text-violet-500 fill-current" /> by Kuldeep Sharma
           </div>
         </div>
       </div>
 
       {/* Watermark */}
-      <div className="absolute -bottom-8 left-0 w-full opacity-[0.012] select-none pointer-events-none overflow-hidden">
-        <div className="text-[15rem] font-black font-outfit leading-none whitespace-nowrap tracking-tighter">UI · UX · DESIGN</div>
+      <div className="absolute -bottom-4 md:-bottom-8 left-0 w-full opacity-[0.012] select-none pointer-events-none overflow-hidden">
+        <div className="text-[8rem] md:text-[15rem] font-black font-outfit leading-none whitespace-nowrap tracking-tighter">UI · UX · DESIGN</div>
       </div>
     </footer>
   );

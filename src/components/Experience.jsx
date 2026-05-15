@@ -5,7 +5,7 @@ import { personalData } from '../data';
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-28 bg-[#050510] relative overflow-hidden">
+    <section id="experience" className="py-16 md:py-28 bg-[#050510] relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-800/8 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-6 max-w-screen-xl">
@@ -25,11 +25,11 @@ const Experience = () => {
                 <span className="section-tag">Career Journey</span>
               </div>
 
-              <h2 className="text-5xl md:text-6xl font-black font-outfit tracking-tight leading-[0.9] text-white mb-6">
+              <h2 className="text-4xl md:text-6xl font-black font-outfit tracking-tight leading-[0.9] text-white mb-6">
                 WORK<br /><span className="text-gradient">HISTORY</span>
               </h2>
               <p className="text-slate-400 text-sm leading-relaxed mb-8">
-                5 years of crafting user-centric digital products — from startups to enterprise-level design systems.
+                5 years of crafting user-centric digital products from startups to enterprise-level design systems.
               </p>
 
               <div className="p-5 glass rounded-2xl border-violet-500/20 mb-4">
@@ -65,34 +65,33 @@ const Experience = () => {
                 className="group relative p-6 md:p-8 glass rounded-2xl hover:border-violet-500/30 transition-all duration-500"
               >
                 {/* Year watermark */}
-                <div className="absolute top-4 right-6 text-6xl font-black text-white/[0.03] font-outfit pointer-events-none select-none">
+                <div className="absolute top-4 right-6 text-5xl md:text-6xl font-black text-white/[0.03] font-outfit pointer-events-none select-none">
                   {exp.period.split('-')[0].trim()}
                 </div>
 
-                <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
+                <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-5">
                   <div className="flex-1 min-w-0">
                     <div className="flex flex-wrap items-center gap-2 mb-3">
-                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-violet-600/20 text-violet-300 text-[10px] font-bold uppercase tracking-widest border border-violet-500/30">
+                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-violet-600/20 text-violet-300 text-[9px] md:text-[10px] font-bold uppercase tracking-widest border border-violet-500/30">
                         <Briefcase size={10} />
                         {exp.company}
                       </div>
                       {exp.type && (
-                        <div className={`inline-flex px-2.5 py-1 rounded-full text-[9px] font-bold uppercase tracking-widest ${
-                          exp.type === 'Full-Time'
+                        <div className={`inline-flex px-2.5 py-1 rounded-full text-[8px] md:text-[9px] font-bold uppercase tracking-widest ${exp.type === 'Full-Time'
                             ? 'bg-green-500/15 text-green-400 border border-green-500/30'
                             : exp.type === 'Freelance'
-                            ? 'bg-amber-500/15 text-amber-400 border border-amber-500/30'
-                            : 'bg-blue-500/15 text-blue-400 border border-blue-500/30'
-                        }`}>
+                              ? 'bg-amber-500/15 text-amber-400 border border-amber-500/30'
+                              : 'bg-blue-500/15 text-blue-400 border border-blue-500/30'
+                          }`}>
                           {exp.type}
                         </div>
                       )}
                     </div>
-                    <h3 className="text-xl md:text-2xl font-black font-outfit text-white group-hover:text-violet-300 transition-colors tracking-tight">
+                    <h3 className="text-lg md:text-2xl font-black font-outfit text-white group-hover:text-violet-300 transition-colors tracking-tight">
                       {exp.role}
                     </h3>
                   </div>
-                  <span className="px-3 py-1 glass rounded-lg text-xs font-bold text-slate-400 uppercase tracking-widest whitespace-nowrap">
+                  <span className="px-3 py-1 glass rounded-lg text-[9px] md:text-xs font-bold text-slate-400 uppercase tracking-widest whitespace-nowrap self-start">
                     {exp.period}
                   </span>
                 </div>

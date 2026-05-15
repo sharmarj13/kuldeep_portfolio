@@ -2,7 +2,7 @@ export const personalData = {
   name: "Kuldeep Sharma",
   role: "Senior UI/UX Designer & Design Lead",
   tagline: "Crafting Intuitive Digital Experiences",
-  summary: "Senior UI/UX Designer with 5+ years of expertise in crafting user-centric digital products that balance aesthetics with functionality. Specialized in end-to-end product design — from user research and wireframing to high-fidelity prototyping and design system creation. As Design Lead at Appic Softwares, I lead a team of designers, mentor junior talent, and collaborate closely with development teams to ship polished, accessible, and scalable interfaces for web and mobile platforms.",
+  summary: "Senior UI/UX Designer with 5+ years of expertise in crafting user-centric digital products that balance aesthetics with functionality. Specialized in end-to-end product design from user research and wireframing to high-fidelity prototyping and design system creation. As Design Lead at Appic Softwares, I lead a team of designers, mentor junior talent, and collaborate closely with development teams to ship polished, accessible, and scalable interfaces for web and mobile platforms.",
   contact: {
     phone: "+91 7014557249",
     email: "kuldeeprjsharma13@gmail.com",
@@ -34,7 +34,7 @@ export const personalData = {
   services: [
     {
       title: "UI/UX Design",
-      desc: "End-to-end product design — research, wireframes, high-fidelity prototypes, and user testing.",
+      desc: "End-to-end product design research, wireframes, high-fidelity prototypes, and user testing.",
       icon: "Figma"
     },
     {
@@ -77,7 +77,7 @@ export const personalData = {
         "Designed brand identities, landing pages, and mobile app interfaces for 15+ startups and SMEs across India.",
         "Delivered complete Figma design files with interactive prototypes, style guides, and asset exports.",
         "Worked directly with founders and marketing teams to align design with business goals and target audiences.",
-        "Specialized in e-commerce UI design — product pages, checkout flows, and conversion-optimized layouts.",
+        "Specialized in e-commerce UI design product pages, checkout flows, and conversion-optimized layouts.",
       ]
     },
     {

@@ -40,7 +40,7 @@ const Portfolio = () => {
     : personalData.projects.filter(p => p.tags.some(tag => tag.toLowerCase().includes(filter.toLowerCase())));
 
   return (
-    <section id="portfolio" className="py-28 relative bg-[#050510] overflow-hidden">
+    <section id="portfolio" className="py-16 md:py-28 relative bg-[#050510] overflow-hidden">
 
       {/* Background blobs - CSS only, no JS */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-violet-600/8 rounded-full blur-[120px] pointer-events-none" />
@@ -57,19 +57,18 @@ const Portfolio = () => {
 
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <div>
-              <h2 className="text-5xl md:text-7xl font-black font-outfit tracking-tight leading-[0.9] text-white">
+              <h2 className="text-4xl md:text-7xl font-black font-outfit tracking-tight leading-[0.9] text-white">
                 MY <span className="text-gradient">PORTFOLIO</span>
               </h2>
-
             </div>
 
             {/* Filter Tabs */}
-            <div className="flex flex-wrap gap-2 p-2 glass rounded-2xl self-start lg:self-auto">
+            <div className="flex flex-wrap gap-1.5 p-1.5 glass rounded-2xl self-start lg:self-auto">
               {categories.map(cat => (
                 <button
                   key={cat}
                   onClick={() => setFilter(cat)}
-                  className={`px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-widest transition-all duration-300 ${
+                  className={`px-4 py-2 md:px-5 md:py-2 rounded-xl text-[10px] md:text-xs font-bold uppercase tracking-widest transition-all duration-300 ${
                     filter === cat
                       ? 'bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-[0_0_20px_rgba(139,92,246,0.35)] scale-105'
                       : 'text-slate-400 hover:text-white hover:bg-white/10'
@@ -136,29 +135,29 @@ const Portfolio = () => {
                   />
                   
                   {/* Navigation Buttons */}
-                  <div className="absolute inset-y-0 -left-4 md:-left-24 flex items-center pointer-events-none">
+                  <div className="absolute inset-y-0 -left-2 md:-left-24 flex items-center pointer-events-none">
                     <button 
                       onClick={(e) => {
                         e.stopPropagation();
                         const prevIdx = (selectedProject.index - 1 + filteredProjects.length) % filteredProjects.length;
                         setSelectedProject({ ...filteredProjects[prevIdx], index: prevIdx });
                       }}
-                      className="pointer-events-auto p-4 md:p-5 bg-white/5 hover:bg-white/10 text-white rounded-full transition-all border border-white/10 hover:scale-110 backdrop-blur-xl"
+                      className="pointer-events-auto p-3 md:p-5 bg-white/10 md:bg-white/5 hover:bg-white/20 text-white rounded-full transition-all border border-white/20 hover:scale-110 backdrop-blur-xl"
                     >
-                      <ChevronLeft size={32} />
+                      <ChevronLeft size={24} className="md:w-8 md:h-8" />
                     </button>
                   </div>
 
-                  <div className="absolute inset-y-0 -right-4 md:-right-24 flex items-center pointer-events-none">
+                  <div className="absolute inset-y-0 -right-2 md:-right-24 flex items-center pointer-events-none">
                     <button 
                       onClick={(e) => {
                         e.stopPropagation();
                         const nextIdx = (selectedProject.index + 1) % filteredProjects.length;
                         setSelectedProject({ ...filteredProjects[nextIdx], index: nextIdx });
                       }}
-                      className="pointer-events-auto p-4 md:p-5 bg-white/5 hover:bg-white/10 text-white rounded-full transition-all border border-white/10 hover:scale-110 backdrop-blur-xl"
+                      className="pointer-events-auto p-3 md:p-5 bg-white/10 md:bg-white/5 hover:bg-white/20 text-white rounded-full transition-all border border-white/20 hover:scale-110 backdrop-blur-xl"
                     >
-                      <ChevronRight size={32} />
+                      <ChevronRight size={24} className="md:w-8 md:h-8" />
                     </button>
                   </div>
                 </div>

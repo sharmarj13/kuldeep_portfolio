@@ -120,7 +120,7 @@ const Hero = () => {
         <FloatingChip label="Prototyping" icon={<Zap size={12} />} delay={2.2} style={{ top: '62%', right: '5%' }} />
 
         {/* ── Main Content ── */}
-        <div className="container mx-auto px-6 max-w-screen-xl relative z-10 pt-32 pb-20">
+        <div className="container mx-auto px-6 max-w-screen-xl relative z-10 pt-28 pb-16 md:pt-32 md:pb-20">
           <div className="max-w-4xl mx-auto text-center">
 
             {/* Badge */}
@@ -128,36 +128,36 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass mb-10 hover:bg-white/10 transition-all cursor-default"
+              className="inline-flex items-center gap-3 px-4 py-2 md:px-5 md:py-2.5 rounded-full glass mb-8 md:mb-10 hover:bg-white/10 transition-all cursor-default"
             >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
               </span>
-              <span className="text-[10px] font-bold uppercase tracking-[0.45em] text-slate-300">
+              <span className="text-[8px] md:text-[10px] font-bold uppercase tracking-[0.3em] md:tracking-[0.45em] text-slate-300">
                 Open to Work · Senior UI/UX Designer · 2026
               </span>
             </motion.div>
 
             {/* ── Big Title ── */}
-            <div className="overflow-hidden mb-6">
+            <div className="overflow-hidden mb-4 md:mb-6">
               <motion.h1
                 initial={{ opacity: 0, y: 80 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
                 className="font-black font-outfit tracking-tighter leading-[0.82] text-white"
-                style={{ fontSize: 'clamp(4rem, 12vw, 11rem)' }}
+                style={{ fontSize: 'clamp(3.5rem, 15vw, 11rem)' }}
               >
                 I DESIGN
               </motion.h1>
             </div>
-            <div className="overflow-hidden mb-4">
+            <div className="overflow-hidden mb-3 md:mb-4">
               <motion.div
                 initial={{ opacity: 0, y: 80 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className="font-black font-outfit tracking-tighter leading-[0.82]"
-                style={{ fontSize: 'clamp(4rem, 12vw, 11rem)' }}
+                style={{ fontSize: 'clamp(3.5rem, 15vw, 11rem)' }}
               >
                 <span
                   className="bg-clip-text text-transparent"
@@ -167,13 +167,13 @@ const Hero = () => {
                 </span>
               </motion.div>
             </div>
-            <div className="overflow-hidden mb-12">
+            <div className="overflow-hidden mb-10 md:mb-12">
               <motion.h1
                 initial={{ opacity: 0, y: 80 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                 className="font-black font-outfit tracking-tighter leading-[0.82] text-white"
-                style={{ fontSize: 'clamp(4rem, 12vw, 11rem)' }}
+                style={{ fontSize: 'clamp(3.5rem, 15vw, 11rem)' }}
               >
                 MAGIC.
               </motion.h1>
@@ -184,12 +184,12 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.35 }}
-              className="text-base md:text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto mb-10"
+              className="text-sm md:text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto mb-10 px-4 md:px-0"
             >
               Hi, I'm{' '}
               <span className="text-white font-bold">{personalData.name}</span>{' '}
-              — a <span className="text-violet-400 font-semibold">Senior UI/UX Designer</span> from India.
-              I craft intuitive, beautiful digital products that users love — from wireframes and prototypes
+              a <span className="text-violet-400 font-semibold">Senior UI/UX Designer</span> from India.
+              I craft intuitive, beautiful digital products that users love from wireframes and prototypes
               to pixel-perfect interfaces and scalable design systems.
             </motion.p>
 
@@ -198,18 +198,18 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.45 }}
-              className="flex flex-wrap items-center justify-center gap-4 mb-20"
+              className="flex flex-wrap items-center justify-center gap-3 md:gap-4 mb-16 md:mb-20"
             >
               <a
                 href="#portfolio"
-                className="group inline-flex items-center gap-2.5 px-8 py-4 bg-gradient-to-r from-violet-600 to-indigo-600 text-white rounded-full font-bold uppercase tracking-widest text-sm shadow-[0_0_40px_rgba(139,92,246,0.4),0_4px_24px_rgba(0,0,0,0.4)] hover:shadow-[0_0_60px_rgba(139,92,246,0.6)] hover:scale-105 transition-all duration-300"
+                className="group inline-flex items-center gap-2 px-6 py-3.5 md:px-8 md:py-4 bg-gradient-to-r from-violet-600 to-indigo-600 text-white rounded-full font-bold uppercase tracking-widest text-xs md:text-sm shadow-[0_0_40px_rgba(139,92,246,0.4),0_4px_24px_rgba(0,0,0,0.4)] hover:shadow-[0_0_60px_rgba(139,92,246,0.6)] hover:scale-105 transition-all duration-300"
               >
                 View My Work
-                <ArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
               <a
                 href={`mailto:${personalData.contact.email}`}
-                className="inline-flex items-center gap-2.5 px-8 py-4 glass text-white rounded-full font-bold uppercase tracking-widest text-sm hover:bg-white/12 hover:border-violet-500/40 transition-all duration-300"
+                className="inline-flex items-center gap-2 px-6 py-3.5 md:px-8 md:py-4 glass text-white rounded-full font-bold uppercase tracking-widest text-xs md:text-sm hover:bg-white/12 hover:border-violet-500/40 transition-all duration-300"
               >
                 <Download size={16} className="text-violet-400" />
                 Hire Me
@@ -221,17 +221,17 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.55 }}
-              className="inline-flex flex-wrap items-center justify-center gap-0 glass rounded-2xl overflow-hidden divide-x divide-white/10"
+              className="grid grid-cols-2 md:inline-flex items-center justify-center gap-px glass rounded-2xl md:rounded-2xl overflow-hidden divide-x divide-white/10"
             >
               {personalData.stats.map((stat) => (
-                <div key={stat.label} className="px-8 py-5 text-center hover:bg-white/5 transition-colors">
+                <div key={stat.label} className="px-4 py-4 md:px-8 md:py-5 text-center hover:bg-white/5 transition-colors">
                   <div
-                    className="text-2xl md:text-3xl font-black font-outfit bg-clip-text text-transparent"
+                    className="text-xl md:text-3xl font-black font-outfit bg-clip-text text-transparent"
                     style={{ backgroundImage: 'linear-gradient(135deg, #a78bfa, #60a5fa)' }}
                   >
                     {stat.value}
                   </div>
-                  <div className="text-[9px] text-slate-500 font-bold uppercase tracking-widest mt-1 whitespace-nowrap">
+                  <div className="text-[8px] md:text-[9px] text-slate-500 font-bold uppercase tracking-widest mt-1 whitespace-nowrap">
                     {stat.label}
                   </div>
                 </div>

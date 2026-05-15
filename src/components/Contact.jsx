@@ -56,12 +56,12 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-28 relative overflow-hidden bg-[#050510]">
+    <section id="contact" className="py-16 md:py-28 relative overflow-hidden bg-[#050510]">
       <div className="absolute bottom-0 left-1/3 w-[500px] h-[500px] bg-violet-800/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-6 max-w-screen-xl">
 
-        <div className="flex items-center gap-3 mb-12">
+        <div className="flex items-center gap-3 mb-8 md:mb-12">
           <div className="h-px w-12 bg-gradient-to-r from-violet-500 to-transparent" />
           <span className="section-tag">Get In Touch</span>
         </div>
@@ -75,10 +75,10 @@ const Contact = () => {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7 }}
           >
-            <h2 className="text-5xl md:text-7xl font-black font-outfit tracking-tight leading-[0.9] text-white mb-6">
+            <h2 className="text-4xl md:text-7xl font-black font-outfit tracking-tight leading-[0.9] text-white mb-6">
               LET'S <span className="text-gradient">CONNECT</span>
             </h2>
-            <p className="text-slate-400 text-base mb-10 max-w-md leading-relaxed">
+            <p className="text-slate-400 text-sm md:text-base mb-10 max-w-md leading-relaxed">
               Have a project in mind? I'd love to hear about it. Send me a message and let's create something amazing together.
             </p>
 

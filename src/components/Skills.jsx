@@ -22,7 +22,7 @@ const Skills = () => {
   const devSkills = personalData.skills.filter(s => s.category === 'Development');
 
   return (
-    <section id="skills" className="py-28 bg-[#050510] text-white relative overflow-hidden">
+    <section id="skills" className="py-16 md:py-28 bg-[#050510] text-white relative overflow-hidden">
       <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-violet-800/8 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-indigo-800/8 rounded-full blur-[100px] pointer-events-none" />
 
@@ -41,22 +41,22 @@ const Skills = () => {
             <span className="section-tag">Technical Skills</span>
           </div>
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
-            <h2 className="text-5xl md:text-7xl font-black font-outfit tracking-tight leading-[0.9] text-white">
+            <h2 className="text-4xl md:text-7xl font-black font-outfit tracking-tight leading-[0.9] text-white">
               MY <span className="text-gradient">EXPERTISE</span>
             </h2>
-            <p className="text-slate-400 text-base max-w-md leading-relaxed">
-              Bridging design artistry with frontend engineering — crafting pixel-perfect, user-centric digital experiences.
+            <p className="text-slate-400 text-sm md:text-base max-w-md leading-relaxed">
+              Bridging design artistry with frontend engineering crafting pixel-perfect, user-centric digital experiences.
             </p>
           </div>
         </motion.div>
 
         {/* Feature Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-12">
           {[
-            { icon: <Figma className="text-pink-400" size={22} />, label: 'UI Design', desc: 'Figma / Adobe XD', color: 'from-pink-500/10 to-violet-500/10 border-pink-500/20' },
-            { icon: <Code2 className="text-indigo-400" size={22} />, label: 'Frontend Dev', desc: 'React / Bootstrap', color: 'from-indigo-500/10 to-cyan-500/10 border-indigo-500/20' },
-            { icon: <Layers className="text-purple-400" size={22} />, label: 'UX Strategy', desc: 'Wireframes / Flows', color: 'from-purple-500/10 to-pink-500/10 border-purple-500/20' },
-            { icon: <Cpu className="text-cyan-400" size={22} />, label: 'Design Lead', desc: '5+ Years Experience', color: 'from-cyan-500/10 to-blue-500/10 border-cyan-500/20' },
+            { icon: <Figma className="text-pink-400" size={20} />, label: 'UI Design', desc: 'Figma / Adobe XD', color: 'from-pink-500/10 to-violet-500/10 border-pink-500/20' },
+            { icon: <Code2 className="text-indigo-400" size={20} />, label: 'Frontend Dev', desc: 'React / Bootstrap', color: 'from-indigo-500/10 to-cyan-500/10 border-indigo-500/20' },
+            { icon: <Layers className="text-purple-400" size={20} />, label: 'UX Strategy', desc: 'Wireframes / Flows', color: 'from-purple-500/10 to-pink-500/10 border-purple-500/20' },
+            { icon: <Cpu className="text-cyan-400" size={20} />, label: 'Design Lead', desc: '5+ Years Experience', color: 'from-cyan-500/10 to-blue-500/10 border-cyan-500/20' },
           ].map((f, i) => (
             <motion.div
               key={i}
@@ -64,11 +64,11 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className={`p-5 rounded-2xl bg-gradient-to-br ${f.color} border hover:-translate-y-1 transition-transform duration-300 group`}
+              className={`p-4 md:p-5 rounded-2xl bg-gradient-to-br ${f.color} border hover:-translate-y-1 transition-transform duration-300 group`}
             >
-              <div className="mb-3 group-hover:scale-110 transition-transform duration-300">{f.icon}</div>
-              <div className="font-bold text-white text-sm mb-0.5">{f.label}</div>
-              <div className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">{f.desc}</div>
+              <div className="mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">{f.icon}</div>
+              <div className="font-bold text-white text-[13px] md:text-sm mb-0.5">{f.label}</div>
+              <div className="text-[9px] text-slate-500 font-bold uppercase tracking-widest leading-tight">{f.desc}</div>
             </motion.div>
           ))}
         </div>
