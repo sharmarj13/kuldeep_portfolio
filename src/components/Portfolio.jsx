@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ExternalLink, Layers, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { personalData } from '../data';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ProjectCard = ({ project, onClick }) => {
   return (
@@ -35,22 +39,46 @@ const Portfolio = () => {
   const [filter, setFilter] = useState('All');
   const [selectedProject, setSelectedProject] = useState(null);
   const categories = ['All', 'Web', 'App'];
+  const sectionRef = useRef(null);
+  const headerRef = useRef(null);
+  const bg1Ref = useRef(null);
+  const bg2Ref = useRef(null);
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.fromTo(headerRef.current,
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, ease: "power3.out", scrollTrigger: { trigger: headerRef.current, start: "top 85%" } }
+      );
+      gsap.to(bg1Ref.current, {
+        yPercent: 40,
+        ease: "none",
+        scrollTrigger: { trigger: sectionRef.current, start: "top bottom", end: "bottom top", scrub: true }
+      });
+      gsap.to(bg2Ref.current, {
+        yPercent: -40,
+        ease: "none",
+        scrollTrigger: { trigger: sectionRef.current, start: "top bottom", end: "bottom top", scrub: true }
+      });
+    }, sectionRef);
+    return () => ctx.revert();
+  }, []);
 
   const filteredProjects = filter === 'All'
     ? personalData.projects
     : personalData.projects.filter(p => p.tags.some(tag => tag.toLowerCase().includes(filter.toLowerCase())));
 
   return (
-    <section id="portfolio" className="py-12 md:py-20 relative bg-white dark:bg-[#050510] overflow-hidden transition-colors duration-500">
+    <section id="portfolio" ref={sectionRef} className="py-12 md:py-20 relative bg-white dark:bg-[#050510] overflow-hidden transition-colors duration-500">
 
       {/* Background blobs - CSS only, no JS */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-violet-600/5 dark:bg-violet-600/8 rounded-full blur-[120px] pointer-events-none transition-colors" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-indigo-600/5 dark:bg-indigo-600/8 rounded-full blur-[120px] pointer-events-none transition-colors" />
+      <div ref={bg1Ref} className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-violet-600/5 dark:bg-violet-600/8 rounded-full blur-[120px] pointer-events-none transition-colors" />
+      <div ref={bg2Ref} className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-indigo-600/5 dark:bg-indigo-600/8 rounded-full blur-[120px] pointer-events-none transition-colors" />
 
       <div className="container mx-auto px-6 max-w-screen-xl relative z-10">
 
         {/* Header */}
-        <div className="mb-10 md:mb-14">
+        <div ref={headerRef} className="mb-10 md:mb-14">
           <div className="flex items-center gap-3 mb-6">
             <div className="h-px w-12 bg-gradient-to-r from-violet-500 to-transparent" />
             <span className="section-tag">Selected Works</span>

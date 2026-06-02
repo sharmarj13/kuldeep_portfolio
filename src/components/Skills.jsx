@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Palette, Code2, Box, Figma, Layers, Cpu } from 'lucide-react';
 import { personalData } from '../data';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const getIcon = (category) => {
   switch (category) {
@@ -14,20 +18,46 @@ const getIcon = (category) => {
 const Skills = () => {
   const designSkills = personalData.skills.filter(s => s.category === 'Design');
   const devSkills = personalData.skills.filter(s => s.category === 'Development');
+  const sectionRef = useRef(null);
+  const headerRef = useRef(null);
+  const cardsRef = useRef([]);
+  const designBoxRef = useRef(null);
+  const devBoxRef = useRef(null);
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.fromTo(headerRef.current, 
+        { y: 50, opacity: 0 }, 
+        { y: 0, opacity: 1, duration: 1, ease: "power3.out", scrollTrigger: { trigger: headerRef.current, start: "top 80%" } }
+      );
+      
+      gsap.fromTo(cardsRef.current, 
+        { y: 50, opacity: 0 }, 
+        { y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: "back.out(1.7)", scrollTrigger: { trigger: headerRef.current, start: "top 80%" } }
+      );
+
+      gsap.fromTo(designBoxRef.current,
+        { x: -50, opacity: 0 },
+        { x: 0, opacity: 1, duration: 1, ease: "power3.out", scrollTrigger: { trigger: designBoxRef.current, start: "top 85%" } }
+      );
+      gsap.fromTo(devBoxRef.current,
+        { x: 50, opacity: 0 },
+        { x: 0, opacity: 1, duration: 1, ease: "power3.out", scrollTrigger: { trigger: devBoxRef.current, start: "top 85%" } }
+      );
+    }, sectionRef);
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <section id="skills" className="py-12 md:py-20 bg-white dark:bg-[#050510] text-slate-900 dark:text-white relative overflow-hidden transition-colors duration-500">
+    <section id="skills" ref={sectionRef} className="py-12 md:py-20 bg-white dark:bg-[#050510] text-slate-900 dark:text-white relative overflow-hidden transition-colors duration-500">
       <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-violet-600/5 dark:bg-violet-800/8 rounded-full blur-[100px] pointer-events-none transition-colors" />
       <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-indigo-600/5 dark:bg-indigo-800/8 rounded-full blur-[100px] pointer-events-none transition-colors" />
 
       <div className="container mx-auto px-6 max-w-screen-xl relative z-10">
 
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
+        <div
+          ref={headerRef}
           className="mb-10 md:mb-14"
         >
           <div className="flex items-center gap-3 mb-6">
@@ -42,7 +72,7 @@ const Skills = () => {
               As a professional Figma Designer and Web Designer, I bridge design artistry with frontend engineering to craft pixel-perfect, user-centric digital experiences.
             </p>
           </div>
-        </motion.div>
+        </div>
 
         {/* Feature Cards */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-12">
@@ -52,18 +82,15 @@ const Skills = () => {
             { icon: <Layers className="text-purple-600 dark:text-purple-400" size={20} />, label: 'UX Strategy', desc: 'Wireframes / Flows' },
             { icon: <Cpu className="text-cyan-600 dark:text-cyan-400" size={20} />, label: 'Design Lead', desc: '5+ Years Experience' },
           ].map((f, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
+              ref={el => cardsRef.current[i] = el}
               className="p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-black/[0.05] dark:border-white/10 hover:border-violet-500/30 hover:-translate-y-1 transition-all duration-300 group shadow-sm hover:shadow-xl"
             >
               <div className="mb-3 group-hover:scale-110 transition-transform duration-300">{React.cloneElement(f.icon, { 'aria-hidden': 'true' })}</div>
               <div className="font-bold text-slate-900 dark:text-white text-[13px] md:text-sm mb-0.5 tracking-tight">{f.label}</div>
               <div className="text-[9px] text-slate-500 dark:text-slate-500 font-bold uppercase tracking-widest leading-tight">{f.desc}</div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
@@ -71,11 +98,8 @@ const Skills = () => {
         <div className="grid lg:grid-cols-2 gap-8">
 
           {/* Design Skills */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6 }}
+          <div
+            ref={designBoxRef}
             className="bg-slate-50/50 dark:bg-white/5 rounded-3xl p-7 md:p-8 border border-black/[0.05] dark:border-white/10 shadow-sm"
           >
             <div className="flex items-center gap-4 mb-7">
@@ -98,14 +122,11 @@ const Skills = () => {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
           {/* Dev Skills */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6 }}
+          <div
+            ref={devBoxRef}
             className="bg-slate-50/50 dark:bg-white/5 rounded-3xl p-7 md:p-8 border border-black/[0.05] dark:border-white/10 shadow-sm"
           >
             <div className="flex items-center gap-4 mb-7">
@@ -128,7 +149,7 @@ const Skills = () => {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

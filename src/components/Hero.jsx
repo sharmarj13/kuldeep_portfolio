@@ -1,7 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Download, Star, Zap, Award, Users } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ArrowUpRight, Download, Star, Zap, Award, Users, Mail } from 'lucide-react';
 import { personalData } from '../data';
+
+gsap.registerPlugin(ScrollTrigger);
 
 /* ── Marquee ticker items ── */
 const tickerItems = [
@@ -44,6 +48,32 @@ const Hero = () => {
   const blobRef1 = useRef(null);
   const blobRef2 = useRef(null);
   const cursorGlowRef = useRef(null);
+  const heroRef = useRef(null);
+  const title1Ref = useRef(null);
+  const title2Ref = useRef(null);
+  const title3Ref = useRef(null);
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      const tl = gsap.timeline();
+      tl.fromTo([title1Ref.current, title2Ref.current, title3Ref.current], 
+        { y: 150, opacity: 0, rotateZ: 4 }, 
+        { y: 0, opacity: 1, rotateZ: 0, duration: 1.4, stagger: 0.15, ease: "power4.out", delay: 0.2 }
+      );
+      
+      gsap.to(blobRef1.current, {
+        yPercent: 30,
+        ease: "none",
+        scrollTrigger: { trigger: heroRef.current, start: "top top", end: "bottom top", scrub: true }
+      });
+      gsap.to(blobRef2.current, {
+        yPercent: -30,
+        ease: "none",
+        scrollTrigger: { trigger: heroRef.current, start: "top top", end: "bottom top", scrub: true }
+      });
+    }, heroRef);
+    return () => ctx.revert();
+  }, []);
 
   /* ── Blob float ── */
   useEffect(() => {
@@ -85,6 +115,7 @@ const Hero = () => {
     <>
       <section
         id="hero-section"
+        ref={heroRef}
         className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-white dark:bg-[#050510] transition-colors duration-500"
       >
         {/* ── Cursor follow glow ── */}
@@ -141,23 +172,19 @@ const Hero = () => {
 
             {/* ── Big Title ── */}
             <div className="overflow-hidden mb-4 md:mb-6">
-              <motion.h1
-                initial={{ opacity: 0, y: 80 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              <h1
+                ref={title1Ref}
                 className="font-black font-outfit tracking-tighter leading-[0.82] text-slate-900 dark:text-white"
-                style={{ fontSize: 'clamp(3.5rem, 15vw, 11rem)' }}
+                style={{ fontSize: 'clamp(3.5rem, 15vw, 11rem)', transformOrigin: 'left center' }}
               >
                 I DESIGN
-              </motion.h1>
+              </h1>
             </div>
             <div className="overflow-hidden mb-3 md:mb-4">
-              <motion.div
-                initial={{ opacity: 0, y: 80 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              <div
+                ref={title2Ref}
                 className="font-black font-outfit tracking-tighter leading-[0.82]"
-                style={{ fontSize: 'clamp(3.5rem, 15vw, 11rem)' }}
+                style={{ fontSize: 'clamp(3.5rem, 15vw, 11rem)', transformOrigin: 'left center' }}
               >
                 <span
                   className="bg-clip-text text-transparent"
@@ -165,18 +192,16 @@ const Hero = () => {
                 >
                   DIGITAL
                 </span>
-              </motion.div>
+              </div>
             </div>
             <div className="overflow-hidden mb-10 md:mb-12">
-              <motion.h1
-                initial={{ opacity: 0, y: 80 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              <h1
+                ref={title3Ref}
                 className="font-black font-outfit tracking-tighter leading-[0.82] text-slate-900 dark:text-white"
-                style={{ fontSize: 'clamp(3.5rem, 15vw, 11rem)' }}
+                style={{ fontSize: 'clamp(3.5rem, 15vw, 11rem)', transformOrigin: 'left center' }}
               >
                 MAGIC.
-              </motion.h1>
+              </h1>
             </div>
 
             {/* ── Description + Name ── */}
@@ -197,24 +222,27 @@ const Hero = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.45 }}
+              transition={{ duration: 0.6, delay: 1.0 }}
               className="flex flex-wrap items-center justify-center gap-3 md:gap-4 mb-16 md:mb-20"
             >
               <a
+                href="/images/Kuldeep_Sharma.pdf"
+                download="Kuldeep_Sharma.pdf"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Download CV"
+                className="group inline-flex items-center gap-2 px-6 py-3.5 md:px-8 md:py-4 bg-gradient-to-r from-violet-600 to-indigo-600 text-white rounded-full font-bold uppercase tracking-widest text-xs md:text-sm shadow-[0_10px_30px_rgba(139,92,246,0.25)] hover:shadow-[0_15px_40px_rgba(139,92,246,0.4)] hover:scale-105 transition-all duration-300"
+              >
+                Download CV
+                <Download size={16} aria-hidden="true" className="group-hover:translate-y-0.5 transition-transform animate-bounce" />
+              </a>
+              <a
                 href="#portfolio"
                 aria-label="View Portfolio"
-                className="group inline-flex items-center gap-2 px-6 py-3.5 md:px-8 md:py-4 bg-gradient-to-r from-violet-600 to-indigo-600 text-white rounded-full font-bold uppercase tracking-widest text-xs md:text-sm shadow-[0_10px_30px_rgba(139,92,246,0.25)] hover:shadow-[0_15px_40px_rgba(139,92,246,0.4)] hover:scale-105 transition-all duration-300"
+                className="group inline-flex items-center gap-2 px-6 py-3.5 md:px-8 md:py-4 bg-slate-50 dark:bg-white/5 text-slate-900 dark:text-white rounded-full font-bold uppercase tracking-widest text-xs md:text-sm hover:bg-slate-100 dark:hover:bg-white/10 border border-black/[0.08] dark:border-violet-500/40 transition-all duration-300"
               >
                 View Portfolio
                 <ArrowUpRight size={16} aria-hidden="true" className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </a>
-              <a
-                href={`mailto:${personalData.contact.email}`}
-                aria-label="Contact Me via Email"
-                className="inline-flex items-center gap-2 px-6 py-3.5 md:px-8 md:py-4 bg-slate-50 dark:bg-white/5 text-slate-900 dark:text-white rounded-full font-bold uppercase tracking-widest text-xs md:text-sm hover:bg-slate-100 dark:hover:bg-white/10 border border-black/[0.08] dark:border-violet-500/40 transition-all duration-300"
-              >
-                <Download size={16} aria-hidden="true" className="text-violet-600 dark:text-violet-400" />
-                Contact Me
               </a>
             </motion.div>
 

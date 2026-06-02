@@ -17,6 +17,7 @@ const Navbar = ({ theme, toggleTheme }) => {
     { name: 'Skills', href: '#skills' },
     { name: 'Experience', href: '#experience' },
     { name: 'Contact', href: '#contact' },
+    { name: 'Resume', href: '/images/Kuldeep_Sharma.pdf', download: true },
   ];
 
   return (
@@ -36,6 +37,7 @@ const Navbar = ({ theme, toggleTheme }) => {
                 <li key={link.name}>
                   <a
                     href={link.href}
+                    {...(link.download ? { download: "Kuldeep_Sharma.pdf", target: "_blank" } : {})}
                     className="text-[11px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-violet-600 dark:hover:text-white transition-colors relative group"
                   >
                     {link.name}
@@ -112,6 +114,7 @@ const Navbar = ({ theme, toggleTheme }) => {
                     <a
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
+                      {...(link.download ? { download: "Kuldeep_Sharma.pdf", target: "_blank" } : {})}
                       aria-label={`Navigate to ${link.name}`}
                       className="text-4xl font-black font-outfit uppercase tracking-tight text-slate-900 dark:text-white hover:text-violet-500 transition-colors inline-flex items-center gap-4 group"
                     >
