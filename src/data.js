@@ -7,7 +7,7 @@ export const personalData = {
     phone: "+91 7014557249",
     email: "kuldeeprjsharma13@gmail.com",
     behance: "https://behance.net/kuldeepsharma27",
-    location: "Sri Ganganagar, Rajasthan, India"
+    location: "Jaipur, Rajasthan, India"
   },
   stats: [
     { value: "5+", label: "Years Experience" },

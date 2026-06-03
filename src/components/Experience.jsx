@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, ChevronRight, Star } from 'lucide-react';
 import { personalData } from '../data';
+import Scroll3DWrapper from './Scroll3DWrapper';
 
 const Experience = () => {
   return (
@@ -56,12 +57,8 @@ const Experience = () => {
           {/* Right - Timeline Cards */}
           <div className="lg:col-span-8 space-y-4 md:space-y-6">
             {personalData.experience.map((exp, idx) => (
-              <motion.div
+              <Scroll3DWrapper
                 key={exp.company + idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
                 className="group relative p-6 md:p-8 bg-slate-50 dark:bg-white/5 border border-black/[0.05] dark:border-white/10 hover:border-violet-500/30 transition-all duration-500 shadow-sm hover:shadow-xl rounded-2xl"
               >
                 {/* Year watermark */}
@@ -106,7 +103,7 @@ const Experience = () => {
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </Scroll3DWrapper>
             ))}
           </div>
         </div>

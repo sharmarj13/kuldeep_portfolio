@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, ArrowUpRight } from 'lucide-react';
 import { personalData } from '../data';
+import Scroll3DWrapper from './Scroll3DWrapper';
 
 const Contact = () => {
   const [formStatus, setFormStatus] = useState('idle'); // idle, loading, success, error
@@ -67,12 +68,13 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
 
           {/* Left Side */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.7 }}
-          >
+          <Scroll3DWrapper>
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.7 }}
+            >
             <h2 className="text-4xl md:text-7xl font-black font-outfit tracking-tight leading-[0.9] text-slate-900 dark:text-white mb-6">
               LET'S <span className="text-gradient">CONNECT</span>
             </h2>
@@ -110,15 +112,17 @@ const Contact = () => {
             >
               View Behance Profile <ArrowUpRight size={16} aria-hidden="true" />
             </a>
-          </motion.div>
+            </motion.div>
+          </Scroll3DWrapper>
 
           {/* Right Side - Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.7 }}
-          >
+          <Scroll3DWrapper>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.7 }}
+            >
             <div className="bg-slate-50/50 dark:bg-white/5 rounded-3xl p-7 md:p-10 border border-black/[0.05] dark:border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.03)] dark:shadow-none">
               <h3 className="text-2xl md:text-3xl font-black font-outfit text-slate-900 dark:text-white mb-8">Send a Message</h3>
 
@@ -195,7 +199,8 @@ const Contact = () => {
                 </motion.button>
               </form>
             </div>
-          </motion.div>
+            </motion.div>
+          </Scroll3DWrapper>
         </div>
       </div>
     </section>

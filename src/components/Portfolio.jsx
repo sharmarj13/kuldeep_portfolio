@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ExternalLink, Layers, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { personalData } from '../data';
+import Scroll3DWrapper from './Scroll3DWrapper';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -121,10 +122,12 @@ const Portfolio = () => {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3, delay: Math.min(idx * 0.04, 0.4) }}
               >
-                <ProjectCard
-                  project={project}
-                  onClick={() => setSelectedProject({ ...project, index: idx })}
-                />
+                <Scroll3DWrapper>
+                  <ProjectCard
+                    project={project}
+                    onClick={() => setSelectedProject({ ...project, index: idx })}
+                  />
+                </Scroll3DWrapper>
               </motion.div>
             ))}
           </AnimatePresence>

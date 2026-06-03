@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Palette, Code2, Box, Figma, Layers, Cpu } from 'lucide-react';
 import { personalData } from '../data';
+import Scroll3DWrapper from './Scroll3DWrapper';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -82,15 +83,16 @@ const Skills = () => {
             { icon: <Layers className="text-purple-600 dark:text-purple-400" size={20} />, label: 'UX Strategy', desc: 'Wireframes / Flows' },
             { icon: <Cpu className="text-cyan-600 dark:text-cyan-400" size={20} />, label: 'Design Lead', desc: '5+ Years Experience' },
           ].map((f, i) => (
-            <div
-              key={i}
-              ref={el => cardsRef.current[i] = el}
-              className="p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-black/[0.05] dark:border-white/10 hover:border-violet-500/30 hover:-translate-y-1 transition-all duration-300 group shadow-sm hover:shadow-xl"
-            >
-              <div className="mb-3 group-hover:scale-110 transition-transform duration-300">{React.cloneElement(f.icon, { 'aria-hidden': 'true' })}</div>
-              <div className="font-bold text-slate-900 dark:text-white text-[13px] md:text-sm mb-0.5 tracking-tight">{f.label}</div>
-              <div className="text-[9px] text-slate-500 dark:text-slate-500 font-bold uppercase tracking-widest leading-tight">{f.desc}</div>
-            </div>
+            <Scroll3DWrapper key={i}>
+              <div
+                ref={el => cardsRef.current[i] = el}
+                className="p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-black/[0.05] dark:border-white/10 hover:border-violet-500/30 hover:-translate-y-1 transition-all duration-300 group shadow-sm hover:shadow-xl h-full"
+              >
+                <div className="mb-3 group-hover:scale-110 transition-transform duration-300">{React.cloneElement(f.icon, { 'aria-hidden': 'true' })}</div>
+                <div className="font-bold text-slate-900 dark:text-white text-[13px] md:text-sm mb-0.5 tracking-tight">{f.label}</div>
+                <div className="text-[9px] text-slate-500 dark:text-slate-500 font-bold uppercase tracking-widest leading-tight">{f.desc}</div>
+              </div>
+            </Scroll3DWrapper>
           ))}
         </div>
 
@@ -98,58 +100,62 @@ const Skills = () => {
         <div className="grid lg:grid-cols-2 gap-8">
 
           {/* Design Skills */}
-          <div
-            ref={designBoxRef}
-            className="bg-slate-50/50 dark:bg-white/5 rounded-3xl p-7 md:p-8 border border-black/[0.05] dark:border-white/10 shadow-sm"
-          >
-            <div className="flex items-center gap-4 mb-7">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-pink-500 to-violet-500 flex items-center justify-center shadow-lg shadow-pink-500/20">
-                <Palette size={20} className="text-white" />
-              </div>
-              <div>
-                <h3 className="font-black text-slate-900 dark:text-white text-base font-outfit">Design Tools</h3>
-                <p className="text-[10px] text-slate-500 dark:text-slate-500 uppercase tracking-[0.2em] font-bold">{designSkills.length} Specialized Skills</p>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-2.5">
-              {designSkills.map((skill) => (
-                <div
-                  key={skill.name}
-                  className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white dark:bg-white/5 border border-black/[0.05] dark:border-white/10 hover:border-pink-500/30 hover:scale-105 transition-all duration-200 cursor-default shadow-sm"
-                >
-                  <span className="text-pink-600 dark:text-pink-400">{React.cloneElement(getIcon(skill.category), { 'aria-hidden': 'true' })}</span>
-                  <span className="font-bold text-sm text-slate-700 dark:text-white tracking-tight">{skill.name}</span>
+          <Scroll3DWrapper>
+            <div
+              ref={designBoxRef}
+              className="bg-slate-50/50 dark:bg-white/5 rounded-3xl p-7 md:p-8 border border-black/[0.05] dark:border-white/10 shadow-sm h-full"
+            >
+              <div className="flex items-center gap-4 mb-7">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-pink-500 to-violet-500 flex items-center justify-center shadow-lg shadow-pink-500/20">
+                  <Palette size={20} className="text-white" />
                 </div>
-              ))}
+                <div>
+                  <h3 className="font-black text-slate-900 dark:text-white text-base font-outfit">Design Tools</h3>
+                  <p className="text-[10px] text-slate-500 dark:text-slate-500 uppercase tracking-[0.2em] font-bold">{designSkills.length} Specialized Skills</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2.5">
+                {designSkills.map((skill) => (
+                  <div
+                    key={skill.name}
+                    className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white dark:bg-white/5 border border-black/[0.05] dark:border-white/10 hover:border-pink-500/30 hover:scale-105 transition-all duration-200 cursor-default shadow-sm"
+                  >
+                    <span className="text-pink-600 dark:text-pink-400">{React.cloneElement(getIcon(skill.category), { 'aria-hidden': 'true' })}</span>
+                    <span className="font-bold text-sm text-slate-700 dark:text-white tracking-tight">{skill.name}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          </Scroll3DWrapper>
 
           {/* Dev Skills */}
-          <div
-            ref={devBoxRef}
-            className="bg-slate-50/50 dark:bg-white/5 rounded-3xl p-7 md:p-8 border border-black/[0.05] dark:border-white/10 shadow-sm"
-          >
-            <div className="flex items-center gap-4 mb-7">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-indigo-500/20">
-                <Code2 size={20} className="text-white" />
-              </div>
-              <div>
-                <h3 className="font-black text-slate-900 dark:text-white text-base font-outfit">Development Stack</h3>
-                <p className="text-[10px] text-slate-500 dark:text-slate-500 uppercase tracking-[0.2em] font-bold">{devSkills.length} Core Technologies</p>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-2.5">
-              {devSkills.map((skill) => (
-                <div
-                  key={skill.name}
-                  className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white dark:bg-white/5 border border-black/[0.05] dark:border-white/10 hover:border-indigo-500/30 hover:scale-105 transition-all duration-200 cursor-default shadow-sm"
-                >
-                  <span className="text-indigo-600 dark:text-indigo-400">{React.cloneElement(getIcon(skill.category), { 'aria-hidden': 'true' })}</span>
-                  <span className="font-bold text-sm text-slate-700 dark:text-white tracking-tight">{skill.name}</span>
+          <Scroll3DWrapper>
+            <div
+              ref={devBoxRef}
+              className="bg-slate-50/50 dark:bg-white/5 rounded-3xl p-7 md:p-8 border border-black/[0.05] dark:border-white/10 shadow-sm h-full"
+            >
+              <div className="flex items-center gap-4 mb-7">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-indigo-500/20">
+                  <Code2 size={20} className="text-white" />
                 </div>
-              ))}
+                <div>
+                  <h3 className="font-black text-slate-900 dark:text-white text-base font-outfit">Development Stack</h3>
+                  <p className="text-[10px] text-slate-500 dark:text-slate-500 uppercase tracking-[0.2em] font-bold">{devSkills.length} Core Technologies</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2.5">
+                {devSkills.map((skill) => (
+                  <div
+                    key={skill.name}
+                    className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white dark:bg-white/5 border border-black/[0.05] dark:border-white/10 hover:border-indigo-500/30 hover:scale-105 transition-all duration-200 cursor-default shadow-sm"
+                  >
+                    <span className="text-indigo-600 dark:text-indigo-400">{React.cloneElement(getIcon(skill.category), { 'aria-hidden': 'true' })}</span>
+                    <span className="font-bold text-sm text-slate-700 dark:text-white tracking-tight">{skill.name}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          </Scroll3DWrapper>
         </div>
       </div>
     </section>
