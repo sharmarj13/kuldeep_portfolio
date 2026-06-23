@@ -20,7 +20,8 @@ const Scroll3DWrapper = ({ children, className = "" }) => {
         scale,
         transformPerspective: 1200,
         transformOrigin: "center top",
-        willChange: "transform"
+        willChange: "transform",
+        position: "relative"
       }}
       className={className}
     >

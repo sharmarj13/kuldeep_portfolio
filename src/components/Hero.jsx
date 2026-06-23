@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight, Download, Star, Zap, Award, Users, Mail } from 'lucide-react';
 import { personalData } from '../data';
+import Parallax from './Parallax';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,17 +32,18 @@ const Ticker = () => (
 );
 
 /* ── Floating skill chip ── */
-const FloatingChip = ({ label, icon, style, delay = 0 }) => (
-  <motion.div
-    initial={{ opacity: 0, scale: 0.8 }}
-    animate={{ opacity: 1, scale: 1 }}
-    transition={{ delay, duration: 0.5 }}
-    className="absolute hidden xl:flex items-center gap-2 px-4 py-2.5 bg-white/90 dark:bg-white/5 backdrop-blur-2xl border border-black/[0.08] dark:border-white/10 rounded-2xl text-slate-800 dark:text-white text-[11px] font-bold shadow-[0_10px_30px_rgba(0,0,0,0.05)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)] cursor-default transition-all duration-500"
-    style={style}
-  >
-    <span className="text-violet-600 dark:text-violet-400">{icon}</span>
-    {label}
-  </motion.div>
+const FloatingChip = ({ label, icon, style, delay = 0, speed = 0.3 }) => (
+  <Parallax speed={speed} className="absolute hidden xl:flex" style={style}>
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ delay, duration: 0.5 }}
+      className="flex items-center gap-2 px-4 py-2.5 bg-white/90 dark:bg-white/5 backdrop-blur-2xl border border-black/[0.08] dark:border-white/10 rounded-2xl text-slate-800 dark:text-white text-[11px] font-bold shadow-[0_10px_30px_rgba(0,0,0,0.05)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)] cursor-default transition-all duration-500"
+    >
+      <span className="text-violet-600 dark:text-violet-400">{icon}</span>
+      {label}
+    </motion.div>
+  </Parallax>
 );
 
 const Hero = () => {
@@ -143,12 +145,12 @@ const Hero = () => {
         />
 
         {/* ── Floating skill chips ── */}
-        <FloatingChip label="Figma Expert" icon={<Star size={12} />} delay={1.2} style={{ top: '22%', left: '5%' }} />
-        <FloatingChip label="UI/UX Designer" icon={<Zap size={12} />} delay={1.4} style={{ top: '38%', left: '3%' }} />
-        <FloatingChip label="5+ Years Exp." icon={<Award size={12} />} delay={1.6} style={{ top: '54%', left: '6%' }} />
-        <FloatingChip label="40+ Clients" icon={<Users size={12} />} delay={1.8} style={{ top: '28%', right: '4%' }} />
-        <FloatingChip label="Design Systems" icon={<Star size={12} />} delay={2.0} style={{ top: '46%', right: '3%' }} />
-        <FloatingChip label="Web Designer" icon={<Zap size={12} />} delay={2.2} style={{ top: '62%', right: '5%' }} />
+        <FloatingChip label="Figma Expert" icon={<Star size={12} />} delay={1.2} speed={-0.3} style={{ top: '22%', left: '5%' }} />
+        <FloatingChip label="UI/UX Designer" icon={<Zap size={12} />} delay={1.4} speed={0.4} style={{ top: '38%', left: '3%' }} />
+        <FloatingChip label="5+ Years Exp." icon={<Award size={12} />} delay={1.6} speed={-0.5} style={{ top: '54%', left: '6%' }} />
+        <FloatingChip label="40+ Clients" icon={<Users size={12} />} delay={1.8} speed={0.2} style={{ top: '28%', right: '4%' }} />
+        <FloatingChip label="Design Systems" icon={<Star size={12} />} delay={2.0} speed={-0.4} style={{ top: '46%', right: '3%' }} />
+        <FloatingChip label="Web Designer" icon={<Zap size={12} />} delay={2.2} speed={0.3} style={{ top: '62%', right: '5%' }} />
 
         {/* ── Main Content ── */}
         <div className="container mx-auto px-6 max-w-screen-xl relative z-10 pt-24 pb-12 md:pt-32 md:pb-20">

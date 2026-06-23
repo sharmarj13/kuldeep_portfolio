@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, ArrowUpRight } from 'lucide-react';
 import { personalData } from '../data';
 import Scroll3DWrapper from './Scroll3DWrapper';
+import Parallax from './Parallax';
 
 const Contact = () => {
   const [formStatus, setFormStatus] = useState('idle'); // idle, loading, success, error
@@ -56,7 +57,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-12 md:py-20 relative overflow-hidden bg-white dark:bg-[#050510] transition-colors duration-500">
-      <div className="absolute bottom-0 left-1/3 w-[500px] h-[500px] bg-violet-600/5 dark:bg-violet-800/10 rounded-full blur-[120px] pointer-events-none transition-colors" />
+      <Parallax speed={-0.35} className="absolute bottom-0 left-1/3 w-[500px] h-[500px] bg-violet-600/5 dark:bg-violet-800/10 rounded-full blur-[120px] pointer-events-none transition-colors" />
 
       <div className="container mx-auto px-6 max-w-screen-xl relative z-10">
 

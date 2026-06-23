@@ -3,11 +3,12 @@ import { motion } from 'framer-motion';
 import { Briefcase, ChevronRight, Star } from 'lucide-react';
 import { personalData } from '../data';
 import Scroll3DWrapper from './Scroll3DWrapper';
+import Parallax from './Parallax';
 
 const Experience = () => {
   return (
     <section id="experience" className="py-12 md:py-20 bg-white dark:bg-[#050510] relative overflow-hidden transition-colors duration-500">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/5 dark:bg-indigo-800/8 rounded-full blur-[120px] pointer-events-none transition-colors duration-700" />
+      <Parallax speed={0.3} className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/5 dark:bg-indigo-800/8 rounded-full blur-[120px] pointer-events-none transition-colors duration-700" />
 
       <div className="container mx-auto px-6 max-w-screen-xl">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-20">
@@ -62,9 +63,11 @@ const Experience = () => {
                 className="group relative p-6 md:p-8 bg-slate-50 dark:bg-white/5 border border-black/[0.05] dark:border-white/10 hover:border-violet-500/30 transition-all duration-500 shadow-sm hover:shadow-xl rounded-2xl"
               >
                 {/* Year watermark */}
-                <div className="absolute top-4 right-6 text-5xl md:text-7xl font-black text-slate-100 dark:text-white/[0.02] font-outfit pointer-events-none select-none transition-colors">
-                  {exp.period.split('-')[0].trim()}
-                </div>
+                <Parallax speed={-0.25} className="absolute top-4 right-6 pointer-events-none select-none">
+                  <div className="text-5xl md:text-7xl font-black text-slate-100 dark:text-white/[0.02] font-outfit transition-colors">
+                    {exp.period.split('-')[0].trim()}
+                  </div>
+                </Parallax>
 
                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
                   <div className="flex-1 min-w-0 relative z-10">

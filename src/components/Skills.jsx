@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Palette, Code2, Box, Figma, Layers, Cpu } from 'lucide-react';
 import { personalData } from '../data';
 import Scroll3DWrapper from './Scroll3DWrapper';
+import Parallax from './Parallax';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -51,8 +52,8 @@ const Skills = () => {
 
   return (
     <section id="skills" ref={sectionRef} className="py-12 md:py-20 bg-white dark:bg-[#050510] text-slate-900 dark:text-white relative overflow-hidden transition-colors duration-500">
-      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-violet-600/5 dark:bg-violet-800/8 rounded-full blur-[100px] pointer-events-none transition-colors" />
-      <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-indigo-600/5 dark:bg-indigo-800/8 rounded-full blur-[100px] pointer-events-none transition-colors" />
+      <Parallax speed={-0.3} className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-violet-600/5 dark:bg-violet-800/8 rounded-full blur-[100px] pointer-events-none transition-colors" />
+      <Parallax speed={0.4} className="absolute top-1/3 right-0 w-[400px] h-[400px] bg-indigo-600/5 dark:bg-indigo-800/8 rounded-full blur-[100px] pointer-events-none transition-colors" />
 
       <div className="container mx-auto px-6 max-w-screen-xl relative z-10">
 
