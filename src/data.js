@@ -1,129 +1,226 @@
 export const personalData = {
   name: "Kuldeep Sharma",
-  role: "Senior UI/UX Designer & Design Lead",
-  tagline: "Crafting Intuitive Digital Experiences",
-  summary: "Senior UI/UX Designer with 5+ years of expertise in crafting user-centric digital products that balance aesthetics with functionality. Specialized in end-to-end product design from user research and wireframing to high-fidelity prototyping and design system creation. As Design Lead at Appic Softwares, I lead a team of designers, mentor junior talent, and collaborate closely with development teams to ship polished, accessible, and scalable interfaces for web and mobile platforms.",
+  role: "AI Product Designer & Senior UI/UX Designer",
+  rolesList: [
+    "AI Product Designer",
+    "Senior UI/UX Designer",
+    "Product Designer",
+    "Website & Web App Designer",
+    "Design Systems Specialist"
+  ],
+  tagline: "Designing Intelligent Products & Intuitive Digital Experiences",
+  summary: "Senior UI/UX and Product Designer with 5+ years of experience creating responsive websites, enterprise web applications, and scalable design systems. Combining deep product thinking with hands-on front-end implementation. Expanding into AI product design with conversational UX, AI states, agentic workflows, and trustworthy human-AI interaction. Open to relocation anywhere with no location constraints.",
+  relocation: {
+    status: "Open to Relocation",
+    details: "Ready to relocate anywhere (Pan-India & Worldwide) • Remote, Hybrid, or On-site",
+    willingToRelocate: true
+  },
   contact: {
     phone: "+91 7014557249",
     email: "kuldeeprjsharma13@gmail.com",
     behance: "https://behance.net/kuldeepsharma27",
-    location: "Jaipur, Rajasthan, India"
+    linkedin: "https://linkedin.com/in/kuldeep-sharma-63436221a",
+    portfolio: "https://kuldeep-portfolio-ochre.vercel.app",
+    location: "Jaipur, Rajasthan, India",
+    relocationNote: "Open to Relocate Anywhere • Remote / Hybrid / On-site"
   },
   stats: [
     { value: "5+", label: "Years Experience" },
     { value: "80+", label: "Projects Delivered" },
     { value: "40+", label: "Happy Clients" },
-    { value: "12+", label: "Design Systems Built" },
+    { value: "100%", label: "Relocation Ready" },
+  ],
+  skillCategories: [
+    {
+      title: "AI Product UX",
+      skills: [
+        "Conversational UX",
+        "Prompt & Response Flows",
+        "AI State Design",
+        "Human-in-the-Loop UX",
+        "Agentic Workflow UX",
+        "AI-Assisted Prototyping"
+      ]
+    },
+    {
+      title: "Product & UX Design",
+      skills: [
+        "Product Design",
+        "UI/UX Design",
+        "User Research",
+        "User Journeys",
+        "Information Architecture",
+        "Wireframing & Prototyping",
+        "Usability Testing"
+      ]
+    },
+    {
+      title: "Design Systems & Tools",
+      skills: [
+        "Figma Expert",
+        "Responsive Design",
+        "Component Libraries",
+        "Accessibility (WCAG)",
+        "Adobe XD",
+        "Adobe Photoshop"
+      ]
+    },
+    {
+      title: "Front-End Engineering",
+      skills: [
+        "HTML5 / CSS3 / SCSS",
+        "JavaScript",
+        "React.js",
+        "Angular",
+        "Next.js",
+        "Bootstrap / Tailwind CSS",
+        "Material UI"
+      ]
+    }
   ],
   skills: [
-    { name: "Figma", category: "Design" },
+    { name: "Figma Expert", category: "Design" },
+    { name: "Product Design", category: "Design" },
+    { name: "AI Product UX", category: "AI" },
+    { name: "Conversational UX", category: "AI" },
+    { name: "Agentic Workflows", category: "AI" },
+    { name: "Design Systems", category: "Design" },
+    { name: "Wireframing & Prototyping", category: "Design" },
+    { name: "User Research & Flows", category: "Design" },
     { name: "Adobe XD", category: "Design" },
     { name: "Adobe Photoshop", category: "Design" },
-    { name: "Adobe Illustrator", category: "Design" },
-    { name: "Canva Pro", category: "Design" },
-    { name: "Prototyping", category: "Design" },
-    { name: "HTML5", category: "Development" },
-    { name: "CSS3 / SCSS", category: "Development" },
-    { name: "Tailwind CSS", category: "Development" },
-    { name: "Bootstrap 4/5", category: "Development" },
-    { name: "React (UI)", category: "Development" },
-    { name: "Material UI", category: "Development" },
-    { name: "Angular Material", category: "Development" },
-    { name: "WordPress Design", category: "Development" },
+    { name: "HTML5 / CSS3", category: "Development" },
+    { name: "JavaScript", category: "Development" },
+    { name: "React.js", category: "Development" },
+    { name: "Next.js", category: "Development" },
+    { name: "Angular", category: "Development" },
+    { name: "Tailwind CSS / Bootstrap", category: "Development" },
+    { name: "Material UI", category: "Development" }
   ],
   services: [
     {
-      title: "UI/UX Design",
-      desc: "End-to-end product design research, wireframes, high-fidelity prototypes, and user testing.",
+      title: "AI Product Design",
+      desc: "Conversational interfaces, agentic workflows, prompt-response flows, AI confidence states, and human-in-the-loop interactions.",
+      icon: "Sparkles"
+    },
+    {
+      title: "UI/UX & Product Design",
+      desc: "End-to-end product design from user research and wireframing to high-fidelity prototypes and polished digital experiences.",
       icon: "Figma"
     },
     {
       title: "Design Systems",
-      desc: "Scalable component libraries and design tokens for consistent brand experiences across products.",
+      desc: "Scalable component libraries, design tokens, and WCAG accessibility guidelines ensuring seamless developer handoffs.",
       icon: "Layers"
     },
     {
-      title: "Web Design",
-      desc: "Responsive, pixel-perfect web interfaces built with HTML, CSS, and modern frameworks.",
+      title: "Website & Web App Design",
+      desc: "Responsive, high-converting websites and enterprise dashboards engineered with modern design principles and clean UI.",
       icon: "Monitor"
+    }
+  ],
+  aiProjects: [
+    {
+      title: "AI Research Copilot",
+      tagline: "Research Workspace & Interactive AI Assistant",
+      desc: "Designing an intelligent research workspace that helps users query complex datasets, organize discoveries, and interact with AI-synthesized responses. Features source citation UX, dynamic follow-up prompt flows, loading & error states, and high-fidelity Figma interactive prototype.",
+      tags: ["AI UX", "Conversational AI", "Citation UX", "Figma Prototype"],
+      badge: "Featured AI Project"
     },
     {
-      title: "Mobile App Design",
-      desc: "Intuitive iOS & Android app designs focused on usability, accessibility, and visual delight.",
-      icon: "Smartphone"
+      title: "AI SaaS / Business Assistant",
+      tagline: "Task-Oriented Business Workflow Companion",
+      desc: "Architecting an AI assistant for routine enterprise business operations. Combines intuitive dashboards with conversational interfaces, structured action reviews, human-control confirmation patterns, and fallback recovery. Prototyped for React/Next.js implementation.",
+      tags: ["Enterprise AI", "Human-in-the-Loop", "SaaS Dashboard", "React / Next.js"],
+      badge: "SaaS Workflow"
     },
+    {
+      title: "Agentic Workflow & Productivity Tool",
+      tagline: "Multi-Step Autonomous Agent Supervision",
+      desc: "Crafting a workflow management tool where users configure multi-step AI agents, monitor real-time task progression, and intervene safely. Includes checkpoint approvals, automated retry logic, error isolation, and seamless human handoff.",
+      tags: ["Agentic UX", "Workflow Automation", "Human Handoff", "Interactive Prototype"],
+      badge: "Agentic Workflow"
+    }
   ],
   experience: [
     {
       company: "Appic Softwares Development LLP",
-      role: "Senior UI/UX Designer & Design Lead",
-      period: "2021 - Present",
+      role: "Senior UI/UX Designer & Product Designer",
+      period: "Jun 2021 - Present",
       type: "Full-Time",
       description: [
-        "Led end-to-end UI/UX design for 50+ web and mobile products across diverse industries including fintech, healthcare, e-commerce, and SaaS.",
-        "Built and maintained a comprehensive design system used by a team of 8+ designers and 20+ developers, reducing design-to-dev handoff time by 40%.",
-        "Conducted user research, usability testing, and A/B testing to optimize user flows and improve conversion rates by an average of 35%.",
-        "Collaborated directly with product managers, stakeholders, and engineering teams using Agile/Scrum methodologies.",
-        "Mentored and guided a team of 4 junior designers, conducting weekly design reviews and pair design sessions.",
-        "Designed responsive interfaces using Figma and Adobe XD, delivering pixel-perfect handoffs with detailed component documentation.",
+        "Own UI/UX design across responsive websites, enterprise web applications, and digital product experiences for diverse client domains.",
+        "Translate business goals and user needs into information architecture, user flows, wireframes, interactive prototypes, and production-ready UI.",
+        "Create scalable design patterns and reusable component libraries in Figma, adhering to WCAG accessibility, responsive behaviors, and visual excellence.",
+        "Bridge design and engineering with front-end implementation in HTML5, CSS3/SCSS, JavaScript, React.js, Next.js, Angular, Bootstrap, and Material UI.",
+        "Collaborate directly with clients, engineers, and product managers to conduct UX reviews, resolve trade-offs, and accelerate feature shipping.",
+        "Design comprehensive edge states including validation, empty, loading, error, and responsive variants for dependable product experiences."
       ]
     },
     {
       company: "Freelance & Independent Projects",
-      role: "UI/UX Designer",
+      role: "UI/UX & Website Designer",
       period: "2020 - 2021",
       type: "Freelance",
       description: [
-        "Designed brand identities, landing pages, and mobile app interfaces for 15+ startups and SMEs across India.",
-        "Delivered complete Figma design files with interactive prototypes, style guides, and asset exports.",
-        "Worked directly with founders and marketing teams to align design with business goals and target audiences.",
-        "Specialized in e-commerce UI design product pages, checkout flows, and conversion-optimized layouts.",
+        "Delivered brand identities, conversion-focused landing pages, and intuitive mobile app interfaces for 15+ startups and SMEs.",
+        "Built production-ready Figma design systems with interactive prototypes, component styles, and organized asset handoffs.",
+        "Worked directly with founders and growth teams to align interface design with user retention and business KPIs.",
+        "Specialized in modern e-commerce user journeys, product discovery, and friction-free checkout workflows."
       ]
     },
     {
-      company: "Parishakar College",
-      role: "Computer Operator & Digital Content Designer",
+      company: "Parishkar College",
+      role: "Digital Content Designer & Web Assistant",
       period: "2018 - 2020",
       type: "Full-Time",
       description: [
-        "Designed digital brochures, banners, and promotional materials using Photoshop and CorelDRAW.",
-        "Managed and updated the college website content, improving visual presentation and information architecture.",
-        "Created data visualization reports and administrative documents for faculty and management.",
+        "Crafted digital branding, promotional campaign graphics, and information graphics using Photoshop and design software.",
+        "Managed website visual content updates, optimizing layout clarity and accessibility for thousands of students and faculty.",
+        "Designed clear data presentation layouts and structured collateral for institutional leadership."
       ]
     }
   ],
   projects: [
-    { title: "E-Commerce Platform", image: "/images/Web 1.png", tags: ["Web", "UI/UX"] },
+    { title: "E-Commerce Platform", image: "/images/Web 1.png", tags: ["Web", "UI/UX", "Product"] },
     { title: "Corporate Branding", image: "/images/Web 3.png", tags: ["Web", "UI/UX"] },
     { title: "Portfolio Concept", image: "/images/Web 4.png", tags: ["Web", "Design"] },
-    { title: "Dashboard Interface", image: "/images/Web 5.png", tags: ["UI/UX", "Web"] },
+    { title: "Dashboard Interface", image: "/images/Web 5.png", tags: ["UI/UX", "Web", "Product"] },
     { title: "Agency Website", image: "/images/Web 6.png", tags: ["Creative", "Web"] },
-    { title: "Product Landing Page", image: "/images/Web 7.png", tags: ["Design", "Web"] },
+    { title: "Product Landing Page", image: "/images/Web 7.png", tags: ["Design", "Web", "Product"] },
     { title: "Marketing Campaign", image: "/images/Web 8.png", tags: ["Modern", "Web"] },
-    { title: "SaaS Dashboard", image: "/images/Web 9.png", tags: ["Web", "UI/UX"] },
+    { title: "SaaS Dashboard", image: "/images/Web 9.png", tags: ["Web", "UI/UX", "Product"] },
     { title: "Creative Blog", image: "/images/Web 10.png", tags: ["Web", "Design"] },
     { title: "Business Solution", image: "/images/Web 11.png", tags: ["UI/UX", "Web"] },
-    { title: "Social Platform", image: "/images/Web 12.png", tags: ["Creative", "Web"] },
-    { title: "Healthcare Portal", image: "/images/Web 13.png", tags: ["Design", "Web"] },
-    { title: "EdTech Platform", image: "/images/Web 14.png", tags: ["Modern", "Web"] },
+    { title: "Social Platform", image: "/images/Web 12.png", tags: ["Creative", "Web", "Product"] },
+    { title: "Healthcare Portal", image: "/images/Web 13.png", tags: ["Design", "Web", "Product"] },
+    { title: "EdTech Platform", image: "/images/Web 14.png", tags: ["Modern", "Web", "Product"] },
     { title: "Fashion Store", image: "/images/Web 15.png", tags: ["Web", "UI/UX"] },
-    { title: "Food Delivery App", image: "/images/app 13.png", tags: ["App", "Mobile"] },
-    { title: "Fitness Tracker", image: "/images/app 14.png", tags: ["App", "UI/UX"] },
+    { title: "Food Delivery App", image: "/images/app 13.png", tags: ["App", "Mobile", "UI/UX"] },
+    { title: "Fitness Tracker", image: "/images/app 14.png", tags: ["App", "UI/UX", "Product"] },
     { title: "Travel Guide App", image: "/images/app 15.png", tags: ["App", "Design"] },
-    { title: "Social Media App", image: "/images/app 16.png", tags: ["Mobile", "Modern"] },
-    { title: "Finance Wallet", image: "/images/app 17.png", tags: ["App", "UI/UX"] },
+    { title: "Social Media App", image: "/images/app 16.png", tags: ["Mobile", "Modern", "Product"] },
+    { title: "Finance Wallet", image: "/images/app 17.png", tags: ["App", "UI/UX", "Product"] },
     { title: "Music Player", image: "/images/app 18.png", tags: ["App", "Mobile"] },
-    { title: "E-Learning App", image: "/images/app 19.png", tags: ["App", "UI/UX"] },
+    { title: "E-Learning App", image: "/images/app 19.png", tags: ["App", "UI/UX", "Product"] },
     { title: "Weather App", image: "/images/app 20.png", tags: ["App", "Design"] },
     { title: "News Reader", image: "/images/app 21.png", tags: ["Mobile", "Modern"] },
-    { title: "Real Estate App", image: "/images/app 22.png", tags: ["App", "UI/UX"] },
-    { title: "Task Manager", image: "/images/app 23.png", tags: ["App", "Mobile"] },
+    { title: "Real Estate App", image: "/images/app 22.png", tags: ["App", "UI/UX", "Product"] },
+    { title: "Task Manager", image: "/images/app 23.png", tags: ["App", "Mobile", "Product"] },
     { title: "Event Planner", image: "/images/app 24.png", tags: ["App", "UI/UX"] },
   ],
   languages: ["Hindi", "English"],
-  education: {
-    degree: "Bachelor of Computer Applications (BCA)",
-    institution: "Parishakar College",
-    year: "2018 - 2021"
-  }
+  education: [
+    {
+      degree: "Bachelor of Arts (B.A.)",
+      institution: "Seth G.L. Bihani PG College, Ganganagar, Rajasthan",
+      year: "2016 - 2019"
+    },
+    {
+      degree: "Senior Secondary (12th)",
+      institution: "Seth G.L. Bihani SD School",
+      year: "2015"
+    }
+  ]
 };
+

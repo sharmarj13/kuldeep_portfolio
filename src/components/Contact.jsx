@@ -50,23 +50,23 @@ const Contact = () => {
     }
   };
   const contactItems = [
-    { icon: <Mail size={18} />, label: 'Email', value: personalData.contact.email, color: 'from-violet-500 to-indigo-500 shadow-violet-500/20' },
-    { icon: <Phone size={18} />, label: 'Phone', value: personalData.contact.phone, color: 'from-indigo-500 to-cyan-500 shadow-indigo-500/20' },
-    { icon: <MapPin size={18} />, label: 'Location', value: personalData.contact.location, color: 'from-pink-500 to-rose-500 shadow-pink-500/20' },
+    { icon: <Mail size={18} />, label: 'Email', value: personalData.contact.email, href: `mailto:${personalData.contact.email}`, color: 'from-violet-500 to-indigo-500 shadow-violet-500/20' },
+    { icon: <Phone size={18} />, label: 'Phone', value: personalData.contact.phone, href: `tel:${personalData.contact.phone}`, color: 'from-indigo-500 to-cyan-500 shadow-indigo-500/20' },
+    { icon: <MapPin size={18} />, label: 'Location & Relocation', value: 'Jaipur, Rajasthan (Open to Relocate Anywhere • Global & Pan-India)', color: 'from-pink-500 to-rose-500 shadow-pink-500/20' },
   ];
 
   return (
-    <section id="contact" className="py-12 md:py-20 relative overflow-hidden bg-white dark:bg-[#050510] transition-colors duration-500">
-      <Parallax speed={-0.35} className="absolute bottom-0 left-1/3 w-[500px] h-[500px] bg-violet-600/5 dark:bg-violet-800/10 rounded-full blur-[120px] pointer-events-none transition-colors" />
+    <section id="contact" className="py-8 md:py-12 relative overflow-hidden bg-[#fcfcfd] dark:bg-[#050510] transition-colors duration-500">
+      <Parallax speed={-0.35} className="absolute bottom-0 left-1/3 w-[500px] h-[500px] bg-violet-500/5 dark:bg-violet-800/10 rounded-full blur-[120px] pointer-events-none transition-colors" />
 
       <div className="container mx-auto px-6 max-w-screen-xl relative z-10">
 
-        <div className="flex items-center gap-3 mb-8 md:mb-12">
+        <div className="flex items-center gap-3 mb-5 md:mb-7">
           <div className="h-px w-12 bg-gradient-to-r from-violet-500 to-transparent" />
-          <span className="section-tag">Get In Touch</span>
+          <span className="section-tag">Let's Build Together</span>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
 
           {/* Left Side */}
           <Scroll3DWrapper>
@@ -76,43 +76,70 @@ const Contact = () => {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.7 }}
             >
-            <h2 className="text-4xl md:text-7xl font-black font-outfit tracking-tight leading-[0.9] text-slate-900 dark:text-white mb-6">
+            <h2 className="text-4xl md:text-7xl font-black font-outfit tracking-tight leading-[0.9] text-slate-900 dark:text-white mb-4">
               LET'S <span className="text-gradient">CONNECT</span>
             </h2>
-            <p className="text-slate-500 dark:text-slate-400 text-sm md:text-base mb-10 max-w-md leading-relaxed">
-              Have a project in mind? I'd love to hear about it. Send me a message and let's create something amazing together.
+            <p className="text-slate-600 dark:text-slate-400 text-sm md:text-base mb-5 max-w-md leading-relaxed">
+              Looking for a Senior UI/UX Designer, Product Designer, or AI UX Specialist?
+              I'm actively interviewing and ready to relocate anywhere or start remotely immediately.
             </p>
 
-            <div className="space-y-3 mb-10">
+            {/* Relocation Callout Banner */}
+            <div className="mb-5 p-4 rounded-2xl bg-emerald-500/10 dark:bg-emerald-500/15 border border-emerald-500/30 flex items-start gap-3">
+              <span className="relative flex h-2.5 w-2.5 mt-1.5 flex-shrink-0">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
+              </span>
+              <div className="text-xs text-slate-800 dark:text-slate-200">
+                <span className="font-extrabold text-emerald-800 dark:text-emerald-300 block mb-0.5 uppercase tracking-wider">
+                  Relocation & Availability Notice
+                </span>
+                No location friction: I am fully ready to relocate for the right role (Bangalore, NCR, Mumbai, Hyderabad, Pune, or International) or join remote teams.
+              </div>
+            </div>
+
+            <div className="space-y-3 mb-5">
               {contactItems.map((item, i) => (
-                <motion.div
+                <motion.a
                   key={i}
+                  href={item.href || '#'}
                   whileHover={{ x: 6 }}
                   transition={{ duration: 0.2 }}
                   aria-label={`Contact via ${item.label}: ${item.value}`}
-                  className="group flex items-center gap-4 p-5 bg-slate-50 dark:bg-white/5 rounded-2xl border border-black/[0.05] dark:border-white/10 hover:border-violet-500/30 transition-all cursor-pointer shadow-sm"
+                  className="group flex items-center gap-4 p-4 md:p-5 bg-white dark:bg-white/5 rounded-2xl border border-slate-200/90 dark:border-white/10 hover:border-violet-500/40 transition-all cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.02)] dark:shadow-none"
                 >
                   <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center text-white flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                     {React.cloneElement(item.icon, { 'aria-hidden': 'true' })}
                   </div>
-                  <div>
-                    <div className="text-[10px] font-bold text-slate-500 dark:text-slate-500 uppercase tracking-widest">{item.label}</div>
-                    <div className="text-slate-900 dark:text-white font-bold text-sm md:text-base mt-0.5">{item.value}</div>
+                  <div className="min-w-0 flex-1">
+                    <div className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">{item.label}</div>
+                    <div className="text-slate-900 dark:text-white font-bold text-sm md:text-base mt-0.5 leading-snug break-words group-hover:text-violet-600 dark:group-hover:text-violet-300 transition-colors">{item.value}</div>
                   </div>
-                  <ArrowUpRight size={18} aria-hidden="true" className="ml-auto opacity-0 group-hover:opacity-100 text-violet-500 dark:text-violet-400 transition-all" />
-                </motion.div>
+                  <ArrowUpRight size={18} aria-hidden="true" className="ml-auto opacity-0 group-hover:opacity-100 text-violet-500 dark:text-violet-400 transition-all flex-shrink-0" />
+                </motion.a>
               ))}
             </div>
 
-            <a
-              href={personalData.contact.behance}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View Behance Profile"
-              className="inline-flex items-center gap-2 px-7 py-3.5 bg-slate-50 dark:bg-white/5 rounded-xl text-violet-600 dark:text-violet-400 font-bold text-sm border border-black/[0.05] dark:border-white/10 hover:bg-violet-500/10 hover:border-violet-500/40 transition-all shadow-sm"
-            >
-              View Behance Profile <ArrowUpRight size={16} aria-hidden="true" />
-            </a>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href={personalData.contact.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Connect on LinkedIn"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold text-xs uppercase tracking-widest transition-all shadow-md hover:scale-105"
+              >
+                LinkedIn Profile <ArrowUpRight size={14} aria-hidden="true" />
+              </a>
+              <a
+                href={personalData.contact.behance}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View Behance Profile"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-white dark:bg-white/5 rounded-xl text-slate-800 dark:text-slate-200 font-bold text-xs uppercase tracking-widest border border-slate-200/90 dark:border-white/10 hover:bg-slate-50 dark:hover:bg-white/10 transition-all shadow-sm"
+              >
+                Behance Portfolio <ArrowUpRight size={14} aria-hidden="true" />
+              </a>
+            </div>
             </motion.div>
           </Scroll3DWrapper>
 
@@ -124,8 +151,8 @@ const Contact = () => {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.7 }}
             >
-            <div className="bg-slate-50/50 dark:bg-white/5 rounded-3xl p-7 md:p-10 border border-black/[0.05] dark:border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.03)] dark:shadow-none">
-              <h3 className="text-2xl md:text-3xl font-black font-outfit text-slate-900 dark:text-white mb-8">Send a Message</h3>
+            <div className="bg-white dark:bg-white/5 rounded-3xl p-7 md:p-10 border border-slate-200/90 dark:border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.04)] dark:shadow-none">
+              <h3 className="text-2xl md:text-3xl font-black font-outfit text-slate-900 dark:text-white mb-8">Send a Direct Message</h3>
 
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid md:grid-cols-2 gap-5">

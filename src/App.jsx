@@ -12,7 +12,7 @@ import './index.css';
 
 function App() {
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('theme') || 'dark';
+    return localStorage.getItem('theme') || 'light';
   });
 
   // Refs for tracking section scroll positions
